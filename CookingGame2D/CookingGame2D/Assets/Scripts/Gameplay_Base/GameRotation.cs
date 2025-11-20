@@ -18,23 +18,58 @@ public class GameRotation : MonoBehaviour
 
     public float timer = 0.5f;
 
+    public bool c1;
+    public bool c2;
+    public bool c3;
+
+    public bool p4;
+    public bool p5;
+    public bool p6;
+
+
     void Update()
     {
         MoveCamera1();
     }
 
-    //We should probably fix this later, maybe put the cams on a numbered list
-    void MoveCamera1()  //Move camera for keyboard player
+    public void ResetCameras1()
     {
+        c1 = false;
+        c2 = false;
+        c3 = false;
+    }
+
+   public void ResetCameras2()
+    {
+        p4 = false;
+        p5 = false;
+        p6 = false;
+    }
+
+
+    //We should probably fix this later, maybe put the cams on a numbered list
+    public void MoveCamera1()  //Move camera for keyboard player
+    {
+       
         if (Keyboard.current.downArrowKey.wasPressedThisFrame) //Move camera down based on previous position
         {
             if (mainCam1.transform.position.y == camPos1.transform.position.y)
             {
                 StartCoroutine(MoveCam(camPos2, mainCam1));
+
+                ResetCameras1();
+
+                c2 = true;
+                return;
             }
             else if (mainCam1.transform.position.y == camPos2.transform.position.y)
             {
                 StartCoroutine(MoveCam(camPos3, mainCam1));
+
+                ResetCameras1();
+                c3 = true;
+                return;
+
             }
             
         }
@@ -43,10 +78,18 @@ public class GameRotation : MonoBehaviour
             if (mainCam1.transform.position.y == camPos2.transform.position.y)
             {
                 StartCoroutine(MoveCam(camPos1, mainCam1));
+
+                ResetCameras1();
+                c1 = true;
+                return;
             }
             else if (mainCam1.transform.position.y == camPos3.transform.position.y)
             {
                 StartCoroutine(MoveCam(camPos2, mainCam1));
+
+                ResetCameras1();
+                c2 = true;
+                return;
             }
 
         }
@@ -54,17 +97,30 @@ public class GameRotation : MonoBehaviour
 
     public void MoveCamera2Down() //Move camera down based on previous position
     {
+        
         if (mainCam2.transform.position.y == camPos4.transform.position.y)
         {
             StartCoroutine(MoveCam(camPos5, mainCam2));
+
+            ResetCameras2();
+            p5 = true;
+                return;
         }
         else if (mainCam2.transform.position.y == camPos5.transform.position.y)
         {
             StartCoroutine(MoveCam(camPos6, mainCam2));
+
+            ResetCameras2();
+            p6 = true;
+            return;
         }
         else
         {
             StartCoroutine(MoveCam(camPos4, mainCam2));
+
+            ResetCameras2();
+            p4 = true;
+            return;
         }
     }
 
@@ -73,14 +129,27 @@ public class GameRotation : MonoBehaviour
         if (mainCam2.transform.position.y == camPos5.transform.position.y)
         {
             StartCoroutine(MoveCam(camPos4, mainCam2));
+
+            ResetCameras2();
+
+            p4 = true;
+            return;
         }
         else if (mainCam2.transform.position.y == camPos6.transform.position.y)
         {
             StartCoroutine(MoveCam(camPos5, mainCam2));
+
+            ResetCameras2();
+            p5 = true;
+                return;
         }
         else
         {
             StartCoroutine(MoveCam(camPos6, mainCam2));
+
+            ResetCameras2();
+            p6 = true;
+            return;
         }
     }
 
