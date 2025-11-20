@@ -1,8 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CookableFood : MonoBehaviour
 {
+    public Camera dragCamera; // assign manually
     public SpriteRenderer sprite;
     public Color cookedColor = Color.black;
     public float burnTime = 5f;
@@ -13,13 +14,17 @@ public class CookableFood : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
 
+    private void Start()
+    {
+        if (dragCamera == null)
+        {
+            dragCamera = Camera.current;
+        }
+    }
+
     void Update()
     {
-        if (isDragging)
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            transform.position = new Vector3(mousePos.x + offset.x, mousePos.y + offset.y, 0f);
-        }
+        HandleDragging();
 
         if (isCooking)
         {
@@ -27,22 +32,67 @@ public class CookableFood : MonoBehaviour
             float t = burnTimer / burnTime;
             sprite.color = Color.Lerp(Color.white, cookedColor, t);
 
-            if (burnTimer >= burnTime) isCooking = false;
+            if (burnTimer >= burnTime)
+                isCooking = false;
         }
     }
 
-    void OnMouseDown()
+    private void HandleDragging()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        offset = transform.position - new Vector3(mousePos.x, mousePos.y, 0f);
-        isDragging = true;
+        // Left mouse button pressed down
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            Vector3 worldPos = dragCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            worldPos.z = 0;
+
+            Collider2D hit = Physics2D.OverlapPoint(worldPos);
+            if (hit != null && hit.gameObject == gameObject)
+            {
+                offset = transform.position - worldPos;
+                isDragging = true;
+            }
+        }
+
+        // Left mouse button released
+        if (Mouse.current.leftButton.wasReleasedThisFrame)
+        {
+            isDragging = false;
+        }
+
+        // Drag the object while holding
+        if (isDragging)
+        {
+            Vector3 mousePos = dragCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            mousePos.z = 0;
+            transform.position = mousePos + offset;
+        }
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            Vector3 worldPos = dragCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            worldPos.z = 0;
+
+            Collider2D hit = Physics2D.OverlapPoint(worldPos);
+            if (hit != null)
+            {
+                Debug.Log("Hit object: " + hit.name);
+            }
+        }
     }
 
-    void OnMouseUp()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        isDragging = false;
+        if (other.CompareTag("Stove"))
+        {
+            Debug.Log("HIT STOVE");
+        }
+        else if (other.CompareTag("Customer"))
+        {
+            Debug.Log("HIT CUSTOMER");
+        }
     }
 
+    // Cooking methods
     public void StartCooking()
     {
         isCooking = true;

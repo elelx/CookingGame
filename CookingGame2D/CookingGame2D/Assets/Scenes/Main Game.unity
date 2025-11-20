@@ -302,9 +302,9 @@ GameObject:
   - component: {fileID: 224138415}
   - component: {fileID: 224138417}
   - component: {fileID: 224138418}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Lettuce
-  m_TagString: Untagged
+  m_TagString: food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,16 +316,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224138413}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0018111056, w: 0.9999984}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 45.641087, y: 47.41949, z: 1.5015}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1288258805}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.098}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.110046, y: -0.049179077}
+  m_AnchoredPosition: {x: 1582, y: 755}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &224138415
@@ -398,6 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5174792f43a84646823ec39f8a7bc70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CookableFood
+  dragCamera: {fileID: 330585545}
   sprite: {fileID: 224138415}
   cookedColor: {r: 0, g: 0, b: 0, a: 1}
   burnTime: 5
@@ -431,7 +432,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -484,14 +485,15 @@ GameObject:
   m_Component:
   - component: {fileID: 330585546}
   - component: {fileID: 330585556}
-  - component: {fileID: 330585555}
   - component: {fileID: 330585554}
+  - component: {fileID: 330585555}
   - component: {fileID: 330585550}
-  - component: {fileID: 330585553}
   - component: {fileID: 330585551}
+  - component: {fileID: 330585557}
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585558}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -647,24 +649,9 @@ MonoBehaviour:
   happySprite: {fileID: 543810155, guid: 03cdd79ce6ecebb4882addb02bb6fdac, type: 3}
   neutralSprite: {fileID: 1958705758, guid: 03cdd79ce6ecebb4882addb02bb6fdac, type: 3}
   angrySprite: {fileID: 1616641909, guid: 03cdd79ce6ecebb4882addb02bb6fdac, type: 3}
-  customerLines: []
-  correctReplies: []
-  answerTimeLimit: 10
+  manual: {fileID: 330585557}
   servicePoints: {fileID: 330585550}
---- !u!114 &330585553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 120f6521e6717bf498db279c928b75df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ManualBookUI
-  manualPanel: {fileID: 141084983}
-  typingInput: {fileID: 2114413794}
+  answerTimeLimit: 10
 --- !u!114 &330585554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,6 +694,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TypingInput
   inputField: {fileID: 2114413792}
   submitHandler: {fileID: 330585554}
+--- !u!114 &330585557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b9406ee64f22a47a6dda8166e4481d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManualBookData
+  dialoguePairs:
+  - customer: hello
+    reply: hello what would you like to order?
+  - customer: i would like to order 1 food
+    reply: okay it is coming right up
+  - customer: ...
+    reply: so how was your day?
+  - customer: today's weather is great
+    reply: yes it is i hope you have a wonderful day
+  - customer: thankyou
+    reply: you are welcomed!
+--- !u!114 &330585558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.Physics2DRaycaster
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &405494257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,8 +1132,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 8.44
+  m_fontSizeBase: 8.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1147,7 +1173,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &563358994
@@ -1710,9 +1736,9 @@ GameObject:
   - component: {fileID: 1214082433}
   - component: {fileID: 1214082435}
   - component: {fileID: 1214082436}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Meat
-  m_TagString: Untagged
+  m_TagString: food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1724,16 +1750,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214082431}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0018111056, w: 0.9999984}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 45.641087, y: 47.41949, z: 1.5015}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1288258805}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.098}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.4869995, y: -0.033050537}
+  m_AnchoredPosition: {x: 1366, y: 759}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1214082433
@@ -1806,6 +1832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5174792f43a84646823ec39f8a7bc70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CookableFood
+  dragCamera: {fileID: 330585545}
   sprite: {fileID: 1214082433}
   cookedColor: {r: 0, g: 0, b: 0, a: 1}
   burnTime: 5
@@ -1839,7 +1866,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1952,7 +1979,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 152.11
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1980,7 +2007,6 @@ RectTransform:
   - {fileID: 1507425807}
   - {fileID: 405494258}
   - {fileID: 1476191115}
-  - {fileID: 1288258805}
   - {fileID: 1805219070}
   - {fileID: 1440875734}
   - {fileID: 141084984}
@@ -2005,9 +2031,9 @@ GameObject:
   - component: {fileID: 1288258806}
   - component: {fileID: 1288258808}
   - component: {fileID: 1288258809}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Burger
-  m_TagString: Untagged
+  m_TagString: food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2019,19 +2045,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288258804}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0018111055, w: 0.99999833}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0018111056, w: 0.9999984}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 45.64108, y: 47.4195, z: 1.5015}
+  m_LocalScale: {x: 45.641083, y: 47.419495, z: 1.5015}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1826093840}
-  - {fileID: 1214082432}
-  - {fileID: 224138414}
-  m_Father: {fileID: 1269852199}
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.098}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 174, y: 247}
+  m_AnchoredPosition: {x: 1766, y: 776}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1288258806
@@ -2078,9 +2101,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 1547995877
+  m_SortingLayer: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: -717835359, guid: 03cdd79ce6ecebb4882addb02bb6fdac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2104,6 +2127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5174792f43a84646823ec39f8a7bc70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CookableFood
+  dragCamera: {fileID: 330585545}
   sprite: {fileID: 1288258806}
   cookedColor: {r: 0, g: 0, b: 0, a: 1}
   burnTime: 5
@@ -2137,7 +2161,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -2287,7 +2311,7 @@ GameObject:
   - component: {fileID: 1440875737}
   m_Layer: 5
   m_Name: Main Character
-  m_TagString: CustomerArea
+  m_TagString: Customer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2529,7 +2553,7 @@ GameObject:
   - component: {fileID: 1507425809}
   m_Layer: 5
   m_Name: Cooking Area
-  m_TagString: Untagged
+  m_TagString: Stove
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2941,9 +2965,9 @@ GameObject:
   - component: {fileID: 1826093841}
   - component: {fileID: 1826093843}
   - component: {fileID: 1826093844}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: 'Bottom burger '
-  m_TagString: Untagged
+  m_TagString: food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2955,16 +2979,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826093839}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0018111056, w: 0.9999984}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 45.641087, y: 47.41949, z: 1.5015}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1288258805}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.098}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.6887207, y: -0.016342163}
+  m_AnchoredPosition: {x: 1148, y: 759}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1826093841
@@ -3037,6 +3061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5174792f43a84646823ec39f8a7bc70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CookableFood
+  dragCamera: {fileID: 330585545}
   sprite: {fileID: 1826093841}
   cookedColor: {r: 0, g: 0, b: 0, a: 1}
   burnTime: 5
@@ -3070,7 +3095,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -3218,8 +3243,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 8.44
+  m_fontSizeBase: 8.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3259,7 +3284,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2014848464
@@ -3368,7 +3393,7 @@ MonoBehaviour:
   m_HideSoftKeyboard: 0
   m_CharacterValidation: 0
   m_RegexValue: 
-  m_GlobalPointSize: 14
+  m_GlobalPointSize: 8.44
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -3619,5 +3644,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 330585546}
+  - {fileID: 1826093840}
+  - {fileID: 1214082432}
+  - {fileID: 224138414}
+  - {fileID: 1288258805}
   - {fileID: 1269852199}
   - {fileID: 787155947}

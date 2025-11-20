@@ -1,27 +1,42 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-public class ManualBookData
+public class ManualBookData : MonoBehaviour
 {
-    private List<(string customer, string reply)> dialoguePairs = new List<(string, string)>
+    [System.Serializable]
+    public class DialoguePair
     {
-        ("hello", "hello what would you like to order?"),
-        ("i would like to order 2 food", "okay it is coming right up"),
-        ("...", "so how was your day?"),
-        ("today's weather is great", "yes, it is i hope you have a wonderful day"),
-        ("thankyou", "you are very welcomed")
-    };
+        public string customer;   // what the customer says
+        public string reply;      // the correct reply player should give
+    }
+
+    [Header("Dialogue List (Customer → Correct Reply)")]
+    public List<DialoguePair> dialoguePairs = new List<DialoguePair>();
 
     private int currentIndex = 0;
 
-    public (string customer, string reply) GetCurrentDialogue() => dialoguePairs[currentIndex];
+    public DialoguePair GetCurrentDialogue()
+    {
+        return dialoguePairs[currentIndex];
+    }
 
-    public string GetCurrentCustomerLine() => dialoguePairs[currentIndex].customer;
-    public string GetCurrentCorrectReply() => dialoguePairs[currentIndex].reply;
+    public string GetCurrentCustomerLine()
+    {
+        return dialoguePairs[currentIndex].customer;
+    }
+
+    public string GetCurrentCorrectReply()
+    {
+        return dialoguePairs[currentIndex].reply;
+    }
 
     public void NextDialogue()
     {
         currentIndex++;
+
         if (currentIndex >= dialoguePairs.Count)
-            currentIndex = 0;
+        {
+            currentIndex = 0; 
+        }
     }
 }

@@ -22,7 +22,7 @@ public class TypingSubmit : MonoBehaviour
             return;
         }
 
-        dialogueManager.CheckAnswer(typed); // returns bool but we don't need to store
+        dialogueManager.CheckAnswer(typed); 
         inputField.ActivateInputField();
     }
 }

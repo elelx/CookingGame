@@ -1,47 +1,37 @@
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(SpriteRenderer), typeof(Collider2D))]
 public class CustomerDialogueManager : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] private TMP_Text customerText;
+    public TMP_Text customerText;
 
-    [Header("Customer Sprite")]
-    [SerializeField] private SpriteRenderer customerSprite;
+    [Header("Sprites")]
+    public SpriteRenderer customerSprite;
+    public Sprite happySprite;
+    public Sprite neutralSprite;
+    public Sprite angrySprite;
 
-    [Header("Emotion Sprites")]
-    [SerializeField] private Sprite happySprite;
-    [SerializeField] private Sprite neutralSprite;
-    [SerializeField] private Sprite angrySprite;
-
-    [Header("Dialogue Settings")]
-    [SerializeField] private string[] customerLines;
-    [SerializeField] private string[] correctReplies;
-    [SerializeField] private float answerTimeLimit = 10f;
+    [Header("Manual Book Data")]
+    public ManualBookData manual;
 
     [Header("Service Points")]
-    [SerializeField] private ServicePoints servicePoints;
+    public ServicePoints servicePoints;
 
-    // Internal state
-    private int angerLevel = 0; // 0=happy, 1=neutral, 2=angry
-    private int currentLineIndex = 0;
-    private float timer;
+    [Header("Settings")]
+    public float answerTimeLimit = 10f;
 
-    private void Start()
+    private int angerLevel = 0;
+    private float timer = 0f;
+    private int currentIndex = 0;
+
+    void Start()
     {
-        if (customerText == null)
-            Debug.LogWarning("CustomerText not assigned in Inspector!");
-
-        if (customerSprite == null)
-            customerSprite = GetComponent<SpriteRenderer>();
-
         ResetDialogue();
     }
 
-    private void Update()
+    void Update()
     {
-        // timer for automatic anger increase
         timer -= Time.deltaTime;
 
         if (timer <= 0f)
@@ -51,49 +41,45 @@ public class CustomerDialogueManager : MonoBehaviour
         }
     }
 
-    // ===================== Dialogue =====================
-
+    //  MAIN DIALOG 
     public bool CheckAnswer(string typed)
     {
+        string correct = manual.dialoguePairs[currentIndex].reply.ToLower().Trim();
         typed = typed.ToLower().Trim();
 
-        if (typed == correctReplies[currentLineIndex])
+        if (typed == correct)
         {
-            // correct answer
             ResetEmotion();
             NextDialogue();
-            return true; // correct
+            return true;
         }
-        else
-        {
-            // wrong answer increases anger
-            IncreaseAnger();
-            return false; // wrong
-        }
+
+        IncreaseAnger();
+        return false;
     }
 
-    public void NextDialogue()
+    private void NextDialogue()
     {
-        currentLineIndex++;
-        if (currentLineIndex >= customerLines.Length)
-            currentLineIndex = 0; // loop back to first line or stop here
+        currentIndex++;
+        if (currentIndex >= manual.dialoguePairs.Count)
+            currentIndex = 0;
 
-        ShowCurrentDialogue();
+        ShowDialogue();
         ResetTimer();
     }
 
     public void ResetDialogue()
     {
-        currentLineIndex = 0;
-        ShowCurrentDialogue();
-        ResetEmotion();
+        currentIndex = 0;
+        angerLevel = 0;
+        UpdateSprite();
+        ShowDialogue();
         ResetTimer();
     }
 
-    public void ShowCurrentDialogue()
+    private void ShowDialogue()
     {
-        if (customerText != null)
-            customerText.text = customerLines[currentLineIndex];
+        customerText.text = manual.dialoguePairs[currentIndex].customer;
     }
 
     private void ResetTimer()
@@ -101,17 +87,15 @@ public class CustomerDialogueManager : MonoBehaviour
         timer = answerTimeLimit;
     }
 
-    // ===================== Emotion / Sprite =====================
-
-    public void IncreaseAnger()
+    //  EMOTIONS 
+    private void IncreaseAnger()
     {
         angerLevel++;
         if (angerLevel > 2) angerLevel = 2;
-
         UpdateSprite();
     }
 
-    public void ResetEmotion()
+    private void ResetEmotion()
     {
         angerLevel = 0;
         UpdateSprite();
@@ -127,34 +111,31 @@ public class CustomerDialogueManager : MonoBehaviour
         }
     }
 
-    public int GetCustomerScore()
+    public int GetScore()
     {
-        switch (angerLevel)
+        return angerLevel switch
         {
-            case 0: return 3;
-            case 1: return 2;
-            case 2: return 1;
-            default: return 0;
-        }
+            0 => 3,
+            1 => 2,
+            2 => 1,
+            _ => 1
+        };
     }
 
-    // ===================== Food Delivery =====================
-
+    //  FOOD DELIVERY 
     private void OnTriggerEnter2D(Collider2D other)
     {
         CookableFood food = other.GetComponent<CookableFood>();
+
         if (food != null)
         {
-            // give points based on current emotion
             if (servicePoints != null)
-                servicePoints.AddPoints(GetCustomerScore());
+                servicePoints.AddPoints(GetScore());
 
-            // destroy the food
             Destroy(food.gameObject);
 
-            // reset emotion and advance dialogue
-            ResetEmotion();
-            NextDialogue();
+            // destroy customer after 5 sec
+            Destroy(gameObject, 5f);
         }
     }
 }
