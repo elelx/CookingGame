@@ -7,7 +7,7 @@ public class ManualBookUI : MonoBehaviour
     public GameObject manualPanel;
 
     [Header("Typing Input")]
-    public TypingInput typingInput;  // drag your TypingInput object here in inspector
+    public TypingInput typingInput;  
 
     [HideInInspector]
     public static bool isManualOpen = false;
