@@ -46,6 +46,11 @@ public class GameRotation : MonoBehaviour
         p6 = false;
     }
 
+    void Start()
+    {
+        StartCoroutine(MoveCam(camPos1, mainCam1));
+        StartCoroutine(MoveCam(camPos4, mainCam2));
+    }
 
     //We should probably fix this later, maybe put the cams on a numbered list
     public void MoveCamera1()  //Move camera for keyboard player
