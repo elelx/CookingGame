@@ -4,6 +4,9 @@ using TMPro;
 [RequireComponent(typeof(SpriteRenderer), typeof(Collider2D))]
 public class CustomerDialogueManager : MonoBehaviour
 {
+    //If we put this script on the customer object, we can acticate and deactivate with the customer
+    //Otherwise we reuse the same script and use another script to store the dialoge lines
+
     [Header("UI")]
     [SerializeField] private TMP_Text customerText;
 
@@ -30,6 +33,7 @@ public class CustomerDialogueManager : MonoBehaviour
 
     private void Start()
     {
+        // Start: Set Sprite, Customer Text Box, Dialoge
         if (customerText == null)
             Debug.LogWarning("CustomerText not assigned in Inspector!");
 
@@ -41,7 +45,7 @@ public class CustomerDialogueManager : MonoBehaviour
 
     private void Update()
     {
-        // timer for automatic anger increase
+        // Timer: Automatic anger levels increase
         timer -= Time.deltaTime;
 
         if (timer <= 0f)
@@ -57,8 +61,11 @@ public class CustomerDialogueManager : MonoBehaviour
     {
         typed = typed.ToLower().Trim();
 
+        Debug.Log(typed);
+
         if (typed == correctReplies[currentLineIndex])
         {
+            Debug.Log("Correct Reply");
             // correct answer
             ResetEmotion();
             NextDialogue();
@@ -66,6 +73,7 @@ public class CustomerDialogueManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("Incorrect Reply");
             // wrong answer increases anger
             IncreaseAnger();
             return false; // wrong

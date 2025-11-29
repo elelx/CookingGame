@@ -7,17 +7,21 @@ public class ManualBookUI : MonoBehaviour
     public GameObject manualPanel;
 
     [Header("Typing Input")]
-    public TypingInput typingInput;  // drag your TypingInput object here in inspector
+    public TypingInput typingInput;  // Typing Input Object
 
     [HideInInspector]
     public static bool isManualOpen = false;
 
     void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.digit1Key.wasPressedThisFrame)
+        //If player presses 1, Open Manuel
+
+        if (Keyboard.current.tabKey.wasPressedThisFrame)
         {
             isManualOpen = !isManualOpen;
             manualPanel.SetActive(isManualOpen);
+
+            Debug.Log(isManualOpen ? "Open" : "Close");
 
             if (typingInput != null)
             {

@@ -11,9 +11,9 @@ public class TypingSubmit : MonoBehaviour
 
     public void SubmitText()
     {
-        if (inputField == null || dialogueManager == null) return;
+        if (inputField == null || dialogueManager == null) return; //If input field and customer dialoge manager script is null, Return
 
-        string typed = inputField.text.ToLower().Trim();
+        string typed = inputField.text.ToLower().Trim(); //Log Text
         inputField.text = "";
 
         if (string.IsNullOrEmpty(typed))
@@ -22,7 +22,7 @@ public class TypingSubmit : MonoBehaviour
             return;
         }
 
-        dialogueManager.CheckAnswer(typed); // returns bool but we don't need to store
+        dialogueManager.CheckAnswer(typed); // Check answer in customer dialoge manager (returns bool but we don't need to store)
         inputField.ActivateInputField();
     }
 }

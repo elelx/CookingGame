@@ -14,6 +14,8 @@ public class TypingInput : MonoBehaviour
         if (!ManualBookUI.isManualOpen)
         {
             if (!inputField.isFocused) ActivateInput();
+            
+            //Press Enter to Submit Text
             if (Keyboard.current != null && Keyboard.current.enterKey.wasPressedThisFrame)
                 submitHandler.SubmitText();
         }
