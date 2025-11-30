@@ -36,12 +36,12 @@ public class IngredientsButtons : MonoBehaviour
         {
             isSceneTActive = true;
             canPlaybutton.SetActive(true);
-            Debug.Log("you can press me");
+            Debug.Log("you can press me #2");
 
         }
         else
         {
-            Debug.Log("get on the same page");
+            Debug.Log("get on the same page#2");
             isSceneTActive = false;
             canPlaybutton.SetActive(false);
         }
