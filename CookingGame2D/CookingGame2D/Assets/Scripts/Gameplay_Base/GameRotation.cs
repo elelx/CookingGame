@@ -30,7 +30,9 @@ public class GameRotation : MonoBehaviour
     void Update()
     {
         MoveCamera1();
+        
     }
+
 
     public void ResetCameras1()
     {

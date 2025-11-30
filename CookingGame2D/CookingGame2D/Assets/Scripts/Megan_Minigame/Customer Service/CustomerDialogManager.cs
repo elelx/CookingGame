@@ -15,8 +15,7 @@ public class CustomerDialogueManager : MonoBehaviour
     [Header("Manual Book Data")]
     public ManualBookData manual;
 
-    [Header("Service Points")]
-    public ServicePoints servicePoints;
+  
 
     [Header("Settings")]
     public float answerTimeLimit = 10f;
@@ -122,20 +121,5 @@ public class CustomerDialogueManager : MonoBehaviour
         };
     }
 
-    //  FOOD DELIVERY 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        CookableFood food = other.GetComponent<CookableFood>();
-
-        if (food != null)
-        {
-            if (servicePoints != null)
-                servicePoints.AddPoints(GetScore());
-
-            Destroy(food.gameObject);
-
-            // destroy customer after 5 sec
-            Destroy(gameObject, 5f);
-        }
-    }
+    
 }
