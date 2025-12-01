@@ -26,7 +26,7 @@ public class ButtonClick : MonoBehaviour
 
     public void onScene1()
     {
-        Debug.Log("hello");
+        //Debug.Log("hello");
 
         bool p1Ready = testGme.c1;
         bool p2Ready = testGme.p4;
@@ -35,12 +35,12 @@ public class ButtonClick : MonoBehaviour
         {
             isSceneOActive = true;
             canPlaybutton.SetActive(true);
-            Debug.Log("you can press me");
+            //Debug.Log("you can press me");
            
         }
         else
         {
-            Debug.Log("get on the same page");
+            //Debug.Log("get on the same page");
             isSceneOActive = false;
             canPlaybutton.SetActive(false);
         }

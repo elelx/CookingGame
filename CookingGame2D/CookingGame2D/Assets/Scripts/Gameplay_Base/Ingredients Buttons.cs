@@ -27,7 +27,7 @@ public class IngredientsButtons : MonoBehaviour
 
     public void onScene2()
     {
-        Debug.Log("hello");
+        //Debug.Log("hello");
 
         bool p1Ready = testGame.c2;
         bool p2Ready = testGame.p5;
@@ -36,12 +36,12 @@ public class IngredientsButtons : MonoBehaviour
         {
             isSceneTActive = true;
             canPlaybutton.SetActive(true);
-            Debug.Log("you can press me #2");
+            //Debug.Log("you can press me #2");
 
         }
         else
         {
-            Debug.Log("get on the same page#2");
+            //Debug.Log("get on the same page#2");
             isSceneTActive = false;
             canPlaybutton.SetActive(false);
         }
