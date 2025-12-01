@@ -22,11 +22,6 @@ public class BasicCustomerManager : MonoBehaviour
     private int angerLevel = 0;
     private float timer = 0f;
 
-    void Start()
-    {
-        CustomerIntroduction();
-    }
-
     void Update()
     {
         EmotionsTimer();
