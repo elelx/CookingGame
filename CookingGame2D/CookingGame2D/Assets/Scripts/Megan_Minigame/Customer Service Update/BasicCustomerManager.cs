@@ -15,7 +15,6 @@ public class BasicCustomerManager : MonoBehaviour
     public Sprite angrySprite;
 
     [Header("Scripts")]
-    //Customer Data Script
     public CustomerInteractionManager interactionManager;
 
     [Header("Settings")]
@@ -77,7 +76,7 @@ public class BasicCustomerManager : MonoBehaviour
         interactionManager.StartPrefrenceQuestions();
     }
 
-    private void ReturnDialogue()
+    public void ReturnDialogue()
     {
         ShowCustomerDialogue();
         ResetCoversationTimer();
