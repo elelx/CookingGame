@@ -92,6 +92,13 @@ public class SoupManager : MonoBehaviour
         // Show the CORRECT soup
         if (r.soupPrefab != null)
             r.soupPrefab.SetActive(true);
+
+        // After making soup, send soup result to active customer:
+        CustomerProfile profile = FindFirstObjectByType<CustomerProfile>();
+        if (profile != null)
+        {
+            profile.ReceiveSoup(r.soupName);
+        }
     }
 
     public void ServeSoup()

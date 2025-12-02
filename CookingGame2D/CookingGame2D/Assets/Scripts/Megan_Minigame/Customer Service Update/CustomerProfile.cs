@@ -33,23 +33,41 @@ public class CustomerProfile : MonoBehaviour
 
     public void ItemResponce()
     {
+        // Favorite
         if (targetMenuItem == favoriteMenuItems)
         {
-            Debug.Log("Favorite");
-            //Heart
-        }
-        else if (targetMenuItem == likedMenuItems[0] || targetMenuItem == likedMenuItems[1] )
-        {
-            Debug.Log("Like");
-            //Thumbs Up
-        }
-        else if (targetMenuItem == dislikedMenuItems[0] || targetMenuItem == dislikedMenuItems[1] || targetMenuItem == dislikedMenuItems[2] || targetMenuItem == dislikedMenuItems[3] || targetMenuItem == dislikedMenuItems[4])
-        {
-            Debug.Log("Hate");
-            //X
+            Debug.Log("Favorite Food!");
+            ScoreManager.Instance.AddPoints(5);
+            // trigger heart animation here
+            return;
         }
 
+        // Liked (using array check)
+        if (System.Array.Exists(likedMenuItems, item => item == targetMenuItem))
+        {
+            Debug.Log("Liked Food!");
+            ScoreManager.Instance.AddPoints(3);
+            // thumbs up animation
+            return;
+        }
+
+        // Disliked (using array check)
+        if (System.Array.Exists(dislikedMenuItems, item => item == targetMenuItem))
+        {
+            Debug.Log("Disliked Food!");
+            ScoreManager.Instance.AddPoints(0);
+            // angry animation
+            return;
+        }
+
+        Debug.Log("Unknown food (0 points)");
     }
 
-   
+
+    public void ReceiveSoup(string soupName)
+    {
+        targetMenuItem = soupName;
+        ItemResponce();
+    }
+
 }
