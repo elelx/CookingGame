@@ -6,18 +6,11 @@ using System.Collections.Generic;
 public class FoodPrepRotation : MonoBehaviour
 {
 
-    public Camera cam;
-    bool holding;
-
     public GameRotation testGme;
     public bool isSceneOActive;
 
     public List<GameObject> buttons;
 
-    void Awake()
-    {
-        if (!cam) cam = Camera.main;
-    }
 
     void Start()
     {
@@ -43,17 +36,13 @@ public class FoodPrepRotation : MonoBehaviour
             }
         }
 
-        if (!isSceneOActive) return;
 
-        if (Input.GetMouseButtonDown(0)) holding = true;
-        if (Input.GetMouseButtonUp(0)) holding = false;
-
-        if (holding)
+        else
         {
-            Vector3 m = cam.ScreenToWorldPoint(Input.mousePosition);
-            m.z = 0f;
-            transform.position = m;
+            isSceneOActive = false;
+            SetButtons(false);
         }
+     
     }
 
     void SetButtons(bool active)

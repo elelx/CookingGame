@@ -5,19 +5,22 @@ using System.Collections.Generic;
 
 public class CuttingAnim : MonoBehaviour
 {
-    public Animator anim;           
-    public string cutBool = "IsCutting"; 
+  
     public PressKeys mashGate;
 
+    public Animator currentAnim;
     bool played;
 
     bool inCutState;
 
-    void Awake()
+    MultiCutController parent;
+
+    public void SetParentController(MultiCutController p, PressKeys gate)
     {
-        if (!anim) anim = GetComponent<Animator>();
-        //if (anim) anim.speed = 0f;
+        parent = p;
+        mashGate = gate;
     }
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,59 +37,108 @@ public class CuttingAnim : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (played) return;
-        Debug.Log("Entered cut: " + collision.name);
+        if (!collision.CompareTag("Knife"))
+        {
+            Debug.Log("Entered, but NOT knife: " + collision.name);
+            return;
+        }
 
+        Debug.Log("Knife ENTERED: " + collision.name);
 
-        TryPlayCut();
+        currentAnim = collision.GetComponent<Animator>();
+
+        played = false;
+
+        inCutState = false;
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
-       
+        if (!collision.CompareTag("Knife")) return;
+
+        if (currentAnim == null) return;
         TryPlayCut();
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Left cut zone: " + collision.name);
-        if (anim) anim.SetBool(cutBool, false); // stop anim 
-        if (anim) anim.speed = 0f;
+        if (!collision.CompareTag("Knife")) return;
+
+        Debug.Log("Knife EXIT: " + collision.name);
+
+        if (currentAnim)
+        {
+            currentAnim.SetBool("IsCutting", false);
+            currentAnim.speed = 0f;
+        }
+
+        currentAnim = null;
+
     }
 
     void TryPlayCut()
     {
+        if (played || currentAnim == null) return;
+
         bool mouseHeld = Input.GetMouseButton(0);  // dragging
         bool gateOK = (mashGate == null) ? true : mashGate.canCut;
         bool shouldCut = mouseHeld && gateOK;
-
-        if (!anim) return;
 
         if (shouldCut)
         {
             
             if (!inCutState)
             {
-                anim.SetBool(cutBool, true);
+                currentAnim.SetBool("IsCutting", true);
                 inCutState = true;
             }
             // resume 
-            anim.speed = 1f;
+            currentAnim.speed = 1f;
         }
         else
         {
             // pause 
-            anim.speed = 0f;
+            currentAnim.speed = 0f;
         }
     }
 
     public void StopCut()
     {
-        Debug.Log("Cut animation finished!");
-        played = true;                //  done
-        if (anim) anim.SetBool(cutBool, false); // stop
+        if (currentAnim == null) return;
 
-        var col = GetComponent<Collider2D>();
+        Debug.Log("cut finished!");
+
+        played = true;//  done
+
+        currentAnim.SetBool("IsCutting", false);
+
+        Collider2D col = currentAnim.GetComponent<Collider2D>();
         if (col) col.enabled = false;
+
+        currentAnim = null;
+
+        if (parent) parent.NotifyPieceFinished();
     }
+
+    public void ResetCutPiece()
+    {
+        played = false;
+        inCutState = false;
+
+        Animator childAnim = GetComponentInChildren<Animator>();
+        if (childAnim)
+        {
+            childAnim.Rebind();
+            childAnim.Update(0f);
+            childAnim.SetBool("IsCutting", false);
+            childAnim.speed = 0f;
+        }
+
+        Collider2D col = GetComponentInChildren<Collider2D>();
+        if (col)
+            col.enabled = true;
+
+        currentAnim = null;
+    }
+
 }

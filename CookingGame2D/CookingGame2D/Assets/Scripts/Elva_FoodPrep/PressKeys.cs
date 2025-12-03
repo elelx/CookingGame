@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class PressKeys : MonoBehaviour
 {
+    public GameRotation testGme;
+    public bool isSceneOActive;
+
+
     public bool canCut;
     public bool FirstCond;
     public bool SecondCond;
@@ -16,7 +20,7 @@ public class PressKeys : MonoBehaviour
 
     public KeyCode[] keys = { KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.J, KeyCode.K, KeyCode.L };
 
-    public Text statusText;
+   // public Text statusText;
 
     float timeA;
     float timeS;
@@ -34,15 +38,22 @@ public class PressKeys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        HoldingPan();
+        if (testGme.c1 && testGme.p4)
+        {
+            isSceneOActive = true;
+            HoldingPan();
+        }
+        else
+        {
+            isSceneOActive = false;
+            canCut = false;
+        }
     }
 
     void HoldingPan()
     {
         float now = Time.time;
 
-        // when player taps a key, record the time
         if (Input.GetKeyDown(KeyCode.A))
         {
             timeA = now;
