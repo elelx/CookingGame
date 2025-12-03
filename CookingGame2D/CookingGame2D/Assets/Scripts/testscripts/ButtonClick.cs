@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using System.Collections.Generic;
 
 
 public class ButtonClick : MonoBehaviour
@@ -9,13 +10,14 @@ public class ButtonClick : MonoBehaviour
     public GameRotation testGme;
     public bool isSceneOActive;
 
-    public GameObject canPlaybutton;
+
+    public List<GameObject> buttons; // multiple buttons
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        canPlaybutton.SetActive(false);
+        SetButtons(false);
     }
 
     // Update is called once per frame
@@ -28,13 +30,13 @@ public class ButtonClick : MonoBehaviour
     {
         //Debug.Log("hello");
 
-        bool p1Ready = testGme.c1;
-        bool p2Ready = testGme.p4;
+        bool p1Ready = testGme.c2;
+        bool p2Ready = testGme.p5;
 
         if (p1Ready && p2Ready)
         {
             isSceneOActive = true;
-            canPlaybutton.SetActive(true);
+            SetButtons(true);
             //Debug.Log("you can press me");
            
         }
@@ -42,17 +44,17 @@ public class ButtonClick : MonoBehaviour
         {
             //Debug.Log("get on the same page");
             isSceneOActive = false;
-            canPlaybutton.SetActive(false);
+            SetButtons(false);
         }
     }
 
-    public void SceneOPlayable()
+    void SetButtons(bool active)
     {
-        
-      Debug.Log("You clicked me to play");
 
-        
- 
+        foreach (GameObject b in buttons)
+        {
+            b.SetActive(active);
+        }
     }
 }
 

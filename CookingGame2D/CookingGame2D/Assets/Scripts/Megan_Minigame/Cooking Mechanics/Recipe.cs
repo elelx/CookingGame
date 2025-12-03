@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Recipe : MonoBehaviour
+
+    //Script for recipe and their ingredients
 {
     [Header("Soup Settings")]
     public string soupName;

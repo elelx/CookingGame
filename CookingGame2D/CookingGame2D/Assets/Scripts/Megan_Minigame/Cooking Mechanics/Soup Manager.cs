@@ -1,52 +1,68 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoupManager : MonoBehaviour
 {
-    [Header("Assign all Recipe MonoBehaviours here")]
+    // This script handles:
+    // - Pot visuals (idle vs cooking)
+    // - Adding ingredients
+    // - Matching ingredients to a recipe
+    // - Setting the soup result sprite on the result button
+    // - Resetting the pot after serving
+
+    [Header("All Recipes")]
     public Recipe[] recipes;
 
-    [Header("Pot visuals")]
+    [Header("Pot Visuals")]
     public SpriteRenderer potRenderer;
     public Sprite potIdleSprite;
     public Sprite potCookingSprite;
 
+    [Header("Result Button")]
+    public Image resultButtonImage;
+   
+
     private List<string> currentPicked = new List<string>();
     private Recipe activeRecipe = null;
+    public string currentSoupName => activeRecipe != null ? activeRecipe.soupName : null;
+    private string Norm(string s) => s.Trim().ToLower();
 
-    string Norm(string s) => s.Trim().ToLower();
 
     void Start()
     {
-        // Make sure NO soup is visible at the start
-        foreach (var r in recipes)
-        {
-            if (r.soupPrefab != null)
-                r.soupPrefab.SetActive(false);
-        }
+      
+        potRenderer.sprite = potIdleSprite;
+
+        // Hide the soup result button image (no soup yet)
+        if (resultButtonImage != null)
+            resultButtonImage.enabled = false;
     }
+
 
     public void AddIngredient(string ingredient)
     {
-        // If soup is already done, no more ingredients accepted
+        // If recipe already completed, avoid adding more ingredients
         if (activeRecipe != null) return;
 
+        
         currentPicked.Add(Norm(ingredient));
 
-        // Change pot visual
+        // Change pot visual to cooking mode
         potRenderer.sprite = potCookingSprite;
-
         CheckRecipes();
     }
 
-    void CheckRecipes()
+
+    private void CheckRecipes()
     {
+        // First check all normal recipes (non-trash)
         foreach (var r in recipes)
         {
-            if (r.isTrash) continue;
+            if (r.isTrash) continue; 
 
-            // Only match when EXACT number of ingredients chosen
+            // If ingredients match a recipe, make that soup
             if (IsMatch(r))
             {
                 MakeSoup(r);
@@ -54,66 +70,62 @@ public class SoupManager : MonoBehaviour
             }
         }
 
-        // Trash logic: only when menu can’t match and at least 2 items
+        // If no recipe matched, check if trash recipe should be triggered
         var trash = recipes.FirstOrDefault(r => r.isTrash);
-        if (trash != null && currentPicked.Count >= 2)
-        {
+
+        // Trash only applies if 5 or more wrong ingredients are added
+        if (trash != null && currentPicked.Count >= 5)
             MakeSoup(trash);
-        }
     }
 
-    bool IsMatch(Recipe r)
+
+    private bool IsMatch(Recipe r)
     {
-        // Must have EXACT ingredient count
+        // Must have the exact same number of ingredients
         if (r.requiredIngredients.Count != currentPicked.Count)
             return false;
 
-        // Compare sorted lists
-        var required = r.requiredIngredients.Select(Norm).ToList();
-        var picked = currentPicked.ToList();
+        // Sort both ingredient lists for comparison
+        var required = r.requiredIngredients.Select(Norm).OrderBy(x => x).ToList();
+        var picked = currentPicked.OrderBy(x => x).ToList();
 
-        required.Sort();
-        picked.Sort();
-
+        
         return required.SequenceEqual(picked);
     }
 
-    void MakeSoup(Recipe r)
+
+    private void MakeSoup(Recipe r)
     {
+        // Set this recipe as the final soup made
         activeRecipe = r;
 
-        // Hide all soups first
-        foreach (var recipe in recipes)
+        // Display soup sprite on result button
+        if (resultButtonImage != null)
         {
-            if (recipe.soupPrefab != null)
-                recipe.soupPrefab.SetActive(false);
+            resultButtonImage.sprite = r.soupSprite; 
+            resultButtonImage.enabled = true;        
         }
 
-        // Show the CORRECT soup
-        if (r.soupPrefab != null)
-            r.soupPrefab.SetActive(true);
-
-        // After making soup, send soup result to active customer:
-        CustomerProfile profile = FindFirstObjectByType<CustomerProfile>();
-        if (profile != null)
-        {
-            profile.ReceiveSoup(r.soupName);
-        }
+        Debug.Log("Soup ready: " + r.soupName);
     }
+
 
     public void ServeSoup()
     {
-        // Deactivate all soups
-        foreach (var recipe in recipes)
-        {
-            if (recipe.soupPrefab != null)
-                recipe.soupPrefab.SetActive(false);
-        }
+        // Reset recipe
+        activeRecipe = null;
 
-        // Reset pot
+     
+        currentPicked.Clear();
+
+        
         potRenderer.sprite = potIdleSprite;
 
-        currentPicked.Clear();
-        activeRecipe = null;
+        
+        if (resultButtonImage != null)
+            resultButtonImage.enabled = false;
     }
+
+   
+    public bool HasFinishedSoup() => activeRecipe != null;
 }
