@@ -18,6 +18,7 @@ public class CustomerInteractionManager : MonoBehaviour
     [Header("Menu Questions")]
     public GameObject[] MenuButtons; //8
     private int[] TargetQuestionNums;
+    public GameObject customerReactionImage;
 
     [Header("Small Talk")]
     private int currentQuestionNum;
@@ -26,6 +27,8 @@ public class CustomerInteractionManager : MonoBehaviour
 
     private void Start()
     {
+        customerReactionImage.SetActive(false);
+
         //Deactivate Small Talk Button
         smallTalkButton = smallTalkButtonObj.GetComponent<Button>();
         StopSmallTalk();
@@ -93,6 +96,7 @@ public class CustomerInteractionManager : MonoBehaviour
 
     public void SmallTalk()
     {
+        customerReactionImage.SetActive(false);
         BasicCustomerManager customerScript = Object.FindFirstObjectByType<BasicCustomerManager>(); //Grab Active Customer Profile Script
         customerScript.ReturnDialogue();
     }
@@ -100,6 +104,8 @@ public class CustomerInteractionManager : MonoBehaviour
     //Prefrerence Quesions
     public void StartPrefrenceQuestions()
     {
+        customerReactionImage.SetActive(true);
+
         Debug.Log("Questions Start");
         TargetQuestionNums = GetThreeRandomNumbers(); //Gets 3 random numbers, no repeats
         PrefrenceQuestions(TargetQuestionNums[0]);
@@ -147,7 +153,7 @@ public class CustomerInteractionManager : MonoBehaviour
     {
         CustomerProfile customerScript = Object.FindFirstObjectByType<CustomerProfile>(); //Grab Active Customer Profile Script
         customerScript.targetMenuItem = MenuItems[0];
-        //customerScript.ItemResponce();
+        customerScript.ItemResponce();
         QuestionsLoop();
     }
 
@@ -155,7 +161,7 @@ public class CustomerInteractionManager : MonoBehaviour
     {
         CustomerProfile customerScript = Object.FindFirstObjectByType<CustomerProfile>(); //Grab Active Customer Profile Script
         customerScript.targetMenuItem = MenuItems[1];
-        //customerScript.ItemResponce();
+        customerScript.ItemResponce();
         QuestionsLoop();
     }
 
@@ -163,7 +169,7 @@ public class CustomerInteractionManager : MonoBehaviour
     {
         CustomerProfile customerScript = Object.FindFirstObjectByType<CustomerProfile>(); //Grab Active Customer Profile Script
         customerScript.targetMenuItem = MenuItems[2];
-        //customerScript.ItemResponce();
+        customerScript.ItemResponce();
         QuestionsLoop();
     }
 
@@ -171,7 +177,7 @@ public class CustomerInteractionManager : MonoBehaviour
     {
         CustomerProfile customerScript = Object.FindFirstObjectByType<CustomerProfile>(); //Grab Active Customer Profile Script
         customerScript.targetMenuItem = MenuItems[3];
-        //customerScript.ItemResponce();
+        customerScript.ItemResponce();
         QuestionsLoop();
     }
 
@@ -179,7 +185,7 @@ public class CustomerInteractionManager : MonoBehaviour
     {
         CustomerProfile customerScript = Object.FindFirstObjectByType<CustomerProfile>(); //Grab Active Customer Profile Script
         customerScript.targetMenuItem = MenuItems[4];
-        //customerScript.ItemResponce();
+        customerScript.ItemResponce();
         QuestionsLoop();
     }
 
@@ -187,7 +193,7 @@ public class CustomerInteractionManager : MonoBehaviour
     {
         CustomerProfile customerScript = Object.FindFirstObjectByType<CustomerProfile>(); //Grab Active Customer Profile Script
         customerScript.targetMenuItem = MenuItems[5];
-        //customerScript.ItemResponce();
+        customerScript.ItemResponce();
         QuestionsLoop();
     }
 
@@ -195,7 +201,7 @@ public class CustomerInteractionManager : MonoBehaviour
     {
         CustomerProfile customerScript = Object.FindFirstObjectByType<CustomerProfile>(); //Grab Active Customer Profile Script
         customerScript.targetMenuItem = MenuItems[6];
-        //customerScript.ItemResponce();
+        customerScript.ItemResponce();
         QuestionsLoop();
     }
 
@@ -203,7 +209,7 @@ public class CustomerInteractionManager : MonoBehaviour
     {
         CustomerProfile customerScript = Object.FindFirstObjectByType<CustomerProfile>(); //Grab Active Customer Profile Script
         customerScript.targetMenuItem = MenuItems[7];
-        //customerScript.ItemResponce();
+        customerScript.ItemResponce();
         QuestionsLoop();
     }
 

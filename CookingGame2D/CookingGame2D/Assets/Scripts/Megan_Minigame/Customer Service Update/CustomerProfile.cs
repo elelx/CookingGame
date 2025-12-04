@@ -15,6 +15,11 @@ public class CustomerProfile : MonoBehaviour
     public string[] likedMenuItems;
     public string favoriteMenuItems;
 
+    public SpriteRenderer customerReationSprite;
+    public Sprite happySprite;
+    public Sprite neutralSprite;
+    public Sprite angrySprite;
+
     [Header("Interaction Managment")]
     public string targetMenuItem; 
     private BasicCustomerManager customerManager;
@@ -37,6 +42,7 @@ public class CustomerProfile : MonoBehaviour
         if (targetMenuItem == favoriteMenuItems)
         {
             Debug.Log("Favorite Food!");
+            customerReationSprite.sprite = happySprite;
             ScoreManager.Instance.AddPoints(5);
             // trigger heart animation here
             return;
@@ -46,6 +52,7 @@ public class CustomerProfile : MonoBehaviour
         if (System.Array.Exists(likedMenuItems, item => item == targetMenuItem))
         {
             Debug.Log("Liked Food!");
+            customerReationSprite.sprite = neutralSprite;
             ScoreManager.Instance.AddPoints(3);
             // thumbs up animation
             return;
@@ -55,6 +62,7 @@ public class CustomerProfile : MonoBehaviour
         if (System.Array.Exists(dislikedMenuItems, item => item == targetMenuItem))
         {
             Debug.Log("Disliked Food!");
+            customerReationSprite.sprite = angrySprite;
             ScoreManager.Instance.AddPoints(0);
             // angry animation
             return;

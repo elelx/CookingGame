@@ -10,9 +10,6 @@ public class BasicCustomerManager : MonoBehaviour
 
     [Header("Sprites")]
     public SpriteRenderer customerSprite;
-    public Sprite happySprite;
-    public Sprite neutralSprite;
-    public Sprite angrySprite;
 
     [Header("Scripts")]
     public CustomerInteractionManager interactionManager;
@@ -81,7 +78,7 @@ public class BasicCustomerManager : MonoBehaviour
     {
         //customerText.text = Meow , Caw, Blub
         interactionManager.customerText.text = customerResponse;
-        Debug.Log("Noise");
+
     }
 
     //  EMOTIONS 
@@ -118,9 +115,9 @@ public class BasicCustomerManager : MonoBehaviour
     {
         switch (angerLevel)
         {
-            case 0: customerSprite.sprite = happySprite; break;
-            case 1: customerSprite.sprite = neutralSprite; break;
-            case 2: customerSprite.sprite = angrySprite; break;
+            case 0: customerSprite.color = new Color (1f, 1f, 1f); break;
+            case 1: customerSprite.color = new Color(0.9f, 0.7f, 0.7f); break;
+            case 2: customerSprite.color = new Color(0.9f, 0.5f, 0.5f); break;
         }
     }
 
