@@ -264,7 +264,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 13256695}
-  - component: {fileID: 13256697}
   - component: {fileID: 13256696}
   m_Layer: 6
   m_Name: bug
@@ -306,25 +305,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ea14dc10cc41dea7a7bee2afc8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiCutController
-  pieces: []
-  totalPieces: 0
+  pieces:
+  - {fileID: 1472695209}
+  - {fileID: 958511094}
+  - {fileID: 399948526}
+  - {fileID: 1053101154}
+  totalPieces: 4
   piecesFinished: 0
   doneButton: {fileID: 2092954365}
   mashGate: {fileID: 1282856302}
---- !u!114 &13256697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13256694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
-  mashGate: {fileID: 1282856302}
-  currentAnim: {fileID: 0}
 --- !u!1 &38916802 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 801496817825612290, guid: 0cd305c2a5058314794a1189061d0dbd, type: 3}
@@ -1230,6 +1219,8 @@ GameObject:
   - component: {fileID: 124327390}
   - component: {fileID: 124327391}
   - component: {fileID: 124327392}
+  - component: {fileID: 124327393}
+  - component: {fileID: 124327394}
   m_Layer: 6
   m_Name: SS (2)
   m_TagString: Untagged
@@ -1340,11 +1331,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -3.5192628, y: 0}
+  m_Offset: {x: -4.329737, y: -1.4998436}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1354,8 +1345,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.4715106, y: 11.89}
+  m_Size: {x: 4.0924587, y: 14.8896885}
   m_EdgeRadius: 0
+--- !u!114 &124327393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124327389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 0}
+  currentAnim: {fileID: 0}
+--- !u!95 &124327394
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124327389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c3937382a1eec49d89769093604f68eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &124778205
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,8 +2497,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ea14dc10cc41dea7a7bee2afc8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiCutController
-  pieces: []
-  totalPieces: 0
+  pieces:
+  - {fileID: 1118043616}
+  - {fileID: 2060760109}
+  totalPieces: 2
   piecesFinished: 0
   doneButton: {fileID: 1727552129}
   mashGate: {fileID: 1282856302}
@@ -3385,7 +3414,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 243598303}
-  - component: {fileID: 243598304}
   - component: {fileID: 243598305}
   m_Layer: 6
   m_Name: garlic
@@ -3411,20 +3439,6 @@ Transform:
   - {fileID: 481438189}
   m_Father: {fileID: 620821889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &243598304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243598302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
-  mashGate: {fileID: 1282856302}
-  currentAnim: {fileID: 0}
 --- !u!114 &243598305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3437,8 +3451,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ea14dc10cc41dea7a7bee2afc8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiCutController
-  pieces: []
-  totalPieces: 0
+  pieces:
+  - {fileID: 911966043}
+  - {fileID: 1646028154}
+  - {fileID: 1323628753}
+  - {fileID: 1230992362}
+  totalPieces: 4
   piecesFinished: 0
   doneButton: {fileID: 1529635316}
   mashGate: {fileID: 1282856302}
@@ -3740,6 +3758,8 @@ GameObject:
   - component: {fileID: 303575860}
   - component: {fileID: 303575861}
   - component: {fileID: 303575862}
+  - component: {fileID: 303575863}
+  - component: {fileID: 303575864}
   m_Layer: 6
   m_Name: k (2)
   m_TagString: Untagged
@@ -3850,11 +3870,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -3.1911883, y: 0}
+  m_Offset: {x: -3.3428836, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3864,8 +3884,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4276536, y: 11.11}
+  m_Size: {x: 3.7030785, y: 11.11}
   m_EdgeRadius: 0
+--- !u!114 &303575863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303575859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 303575864}
+--- !u!95 &303575864
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303575859}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe90748604590425f8f0c8620f648897, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &308812929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5117,6 +5173,8 @@ GameObject:
   - component: {fileID: 399948523}
   - component: {fileID: 399948524}
   - component: {fileID: 399948525}
+  - component: {fileID: 399948526}
+  - component: {fileID: 399948527}
   m_Layer: 6
   m_Name: B (2)
   m_TagString: Untagged
@@ -5227,7 +5285,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -5243,6 +5301,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0426887, y: 6.18}
   m_EdgeRadius: 0
+--- !u!114 &399948526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399948522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 399948527}
+--- !u!95 &399948527
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399948522}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7effca1c2d44340c49394908592bbcd4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &404392968
 GameObject:
   m_ObjectHideFlags: 0
@@ -6464,8 +6558,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ea14dc10cc41dea7a7bee2afc8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiCutController
-  pieces: []
-  totalPieces: 0
+  pieces:
+  - {fileID: 860302930}
+  - {fileID: 2103387210}
+  - {fileID: 1963588286}
+  totalPieces: 3
   piecesFinished: 0
   doneButton: {fileID: 48220526}
   mashGate: {fileID: 1282856302}
@@ -6571,6 +6668,7 @@ GameObject:
   - component: {fileID: 532632800}
   - component: {fileID: 532632802}
   - component: {fileID: 532632801}
+  - component: {fileID: 532632803}
   m_Layer: 6
   m_Name: M
   m_TagString: Untagged
@@ -6664,7 +6762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
-  dragThreshold: 10
+  dragThreshold: 4
 --- !u!61 &532632802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6711,6 +6809,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.280032, y: 6.28}
   m_EdgeRadius: 0
+--- !u!95 &532632803
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532632798}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3b52a356b9fd4688bed4bab5f923848, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &550465340
 GameObject:
   m_ObjectHideFlags: 0
@@ -8158,6 +8278,8 @@ GameObject:
   - component: {fileID: 676337981}
   - component: {fileID: 676337982}
   - component: {fileID: 676337983}
+  - component: {fileID: 676337984}
+  - component: {fileID: 676337985}
   m_Layer: 6
   m_Name: C
   m_TagString: Untagged
@@ -8268,7 +8390,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -8284,6 +8406,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.7966912, y: 6.64}
   m_EdgeRadius: 0
+--- !u!114 &676337984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676337980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 676337985}
+--- !u!95 &676337985
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676337980}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35ba1e12be25d4bcc9c733b8391596a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &712521752 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 801496817825612290, guid: 0cd305c2a5058314794a1189061d0dbd, type: 3}
@@ -8946,7 +9104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &823297323
 Transform:
   m_ObjectHideFlags: 0
@@ -8962,8 +9120,8 @@ Transform:
   m_Children:
   - {fileID: 2091538552}
   - {fileID: 2060760105}
-  - {fileID: 1908288808}
   - {fileID: 1118043613}
+  - {fileID: 1908288808}
   m_Father: {fileID: 163999923}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &825987325
@@ -9826,6 +9984,8 @@ GameObject:
   - component: {fileID: 860302927}
   - component: {fileID: 860302928}
   - component: {fileID: 860302929}
+  - component: {fileID: 860302930}
+  - component: {fileID: 860302931}
   m_Layer: 6
   m_Name: o
   m_TagString: Untagged
@@ -9936,11 +10096,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.2351346, y: 2.4268346}
+  m_Offset: {x: 0.058781624, y: 3.3752239}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9950,8 +10110,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 13.296632, y: 1.24264}
+  m_Size: {x: 14.531107, y: 3.139419}
   m_EdgeRadius: 0
+--- !u!114 &860302930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860302926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 860302931}
+--- !u!95 &860302931
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860302926}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0ec46b6793d8472f85e31e60d8a3085, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &864571389
 GameObject:
   m_ObjectHideFlags: 0
@@ -10652,7 +10848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
-  dragThreshold: 10
+  dragThreshold: 3
 --- !u!61 &895866342
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10969,6 +11165,8 @@ GameObject:
   - component: {fileID: 908198711}
   - component: {fileID: 908198712}
   - component: {fileID: 908198713}
+  - component: {fileID: 908198715}
+  - component: {fileID: 908198714}
   m_Layer: 6
   m_Name: k
   m_TagString: Untagged
@@ -11079,11 +11277,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 2.7641983, y: 0}
+  m_Offset: {x: 2.726275, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11093,8 +11291,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.0116322, y: 8.44}
+  m_Size: {x: 4.666294, y: 8.44}
   m_EdgeRadius: 0
+--- !u!114 &908198714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908198710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 908198715}
+--- !u!95 &908198715
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908198710}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbc085af18c9e4e74972810d5dbfd7d4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &911966039
 GameObject:
   m_ObjectHideFlags: 0
@@ -11106,6 +11340,8 @@ GameObject:
   - component: {fileID: 911966040}
   - component: {fileID: 911966041}
   - component: {fileID: 911966042}
+  - component: {fileID: 911966043}
+  - component: {fileID: 911966044}
   m_Layer: 6
   m_Name: SG
   m_TagString: Untagged
@@ -11216,11 +11452,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.5272364, y: 0}
+  m_Offset: {x: 0.1400531, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11230,8 +11466,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0189384, y: 5.63}
+  m_Size: {x: 2.3535175, y: 5.63}
   m_EdgeRadius: 0
+--- !u!114 &911966043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911966039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 911966044}
+--- !u!95 &911966044
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911966039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe8da11c16f874c7cb4294f9a8fc48b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &930175079
 GameObject:
   m_ObjectHideFlags: 0
@@ -11629,6 +11901,8 @@ GameObject:
   - component: {fileID: 958511091}
   - component: {fileID: 958511092}
   - component: {fileID: 958511093}
+  - component: {fileID: 958511094}
+  - component: {fileID: 958511095}
   m_Layer: 6
   m_Name: B (1)
   m_TagString: Untagged
@@ -11645,7 +11919,7 @@ Transform:
   m_GameObject: {fileID: 958511090}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.110137984, y: 0.05299973, z: 0}
+  m_LocalPosition: {x: 0.110138, y: 0.05299973, z: 0}
   m_LocalScale: {x: 0.030141018, y: 0.045048863, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11739,7 +12013,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -11755,6 +12029,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0096705, y: 5.78}
   m_EdgeRadius: 0
+--- !u!114 &958511094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958511090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 958511095}
+--- !u!95 &958511095
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958511090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db67b605ae9a94a32b0af243cb0ac69c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &960178303
 GameObject:
   m_ObjectHideFlags: 0
@@ -12372,7 +12682,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 976483299}
-  - component: {fileID: 976483300}
   - component: {fileID: 976483301}
   m_Layer: 6
   m_Name: carrot
@@ -12395,24 +12704,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 676337981}
-  - {fileID: 633518139}
   - {fileID: 1461579504}
+  - {fileID: 633518139}
   m_Father: {fileID: 620821889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &976483300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976483298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
-  mashGate: {fileID: 1282856302}
-  currentAnim: {fileID: 0}
 --- !u!114 &976483301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12425,8 +12720,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ea14dc10cc41dea7a7bee2afc8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiCutController
-  pieces: []
-  totalPieces: 0
+  pieces:
+  - {fileID: 676337984}
+  - {fileID: 1461579507}
+  totalPieces: 2
   piecesFinished: 0
   doneButton: {fileID: 465831990}
   mashGate: {fileID: 1282856302}
@@ -13181,6 +13478,8 @@ GameObject:
   - component: {fileID: 1053101151}
   - component: {fileID: 1053101152}
   - component: {fileID: 1053101153}
+  - component: {fileID: 1053101154}
+  - component: {fileID: 1053101155}
   m_Layer: 6
   m_Name: B (3)
   m_TagString: Untagged
@@ -13197,7 +13496,7 @@ Transform:
   m_GameObject: {fileID: 1053101150}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21475002, y: 0.05299973, z: 0}
+  m_LocalPosition: {x: -0.21475, y: 0.05299973, z: 0}
   m_LocalScale: {x: 0.030141018, y: 0.045048863, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13291,7 +13590,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -13307,6 +13606,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2952353, y: 6.06}
   m_EdgeRadius: 0
+--- !u!114 &1053101154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053101150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 1053101155}
+--- !u!95 &1053101155
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053101150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72c8f5dffd06f498292a1844dc57cdf2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1057737482
 GameObject:
   m_ObjectHideFlags: 0
@@ -13492,8 +13827,8 @@ Transform:
   m_Children:
   - {fileID: 1458089252}
   - {fileID: 908198711}
-  - {fileID: 562598359}
   - {fileID: 303575860}
+  - {fileID: 562598359}
   m_Father: {fileID: 620821889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1085312720
@@ -13522,8 +13857,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ea14dc10cc41dea7a7bee2afc8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiCutController
-  pieces: []
-  totalPieces: 0
+  pieces:
+  - {fileID: 908198714}
+  - {fileID: 303575863}
+  totalPieces: 2
   piecesFinished: 0
   doneButton: {fileID: 331304990}
   mashGate: {fileID: 1282856302}
@@ -13830,7 +14167,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1754345137734389088, guid: 2440ed14a93b44ba2a525fa43d0388ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13853,6 +14190,8 @@ GameObject:
   - component: {fileID: 1118043613}
   - component: {fileID: 1118043614}
   - component: {fileID: 1118043615}
+  - component: {fileID: 1118043616}
+  - component: {fileID: 1118043617}
   m_Layer: 6
   m_Name: S (2)
   m_TagString: Untagged
@@ -13963,11 +14302,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.9716463, y: 0}
+  m_Offset: {x: -3.2416682, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13977,8 +14316,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.0267372, y: 7.49}
+  m_Size: {x: 3.9554656, y: 7.49}
   m_EdgeRadius: 0
+--- !u!114 &1118043616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118043612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 1118043617}
+--- !u!95 &1118043617
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118043612}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a6b8ece0937449e38466ecbee208182, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1120992685
 GameObject:
   m_ObjectHideFlags: 0
@@ -14865,6 +15240,8 @@ GameObject:
   - component: {fileID: 1230992359}
   - component: {fileID: 1230992360}
   - component: {fileID: 1230992361}
+  - component: {fileID: 1230992362}
+  - component: {fileID: 1230992363}
   m_Layer: 6
   m_Name: SG (3)
   m_TagString: Untagged
@@ -14975,7 +15352,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -14991,6 +15368,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.7619205, y: 7.8}
   m_EdgeRadius: 0
+--- !u!114 &1230992362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230992358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 1230992363}
+--- !u!95 &1230992363
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230992358}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ae40a4f727314372ae4bf6a86db609c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1240794952
 GameObject:
   m_ObjectHideFlags: 0
@@ -15163,7 +15576,6 @@ MonoBehaviour:
   isSceneOActive: 0
   canCut: 0
   FirstCond: 0
-  SecondCond: 0
   AllCondMet: 0
   pressLifetime: 0.45
   keys: 6100000073000000640000006a0000006b0000006c000000
@@ -15178,6 +15590,8 @@ GameObject:
   - component: {fileID: 1289199905}
   - component: {fileID: 1289199906}
   - component: {fileID: 1289199907}
+  - component: {fileID: 1289199908}
+  - component: {fileID: 1289199909}
   m_Layer: 6
   m_Name: F (2)
   m_TagString: Untagged
@@ -15194,7 +15608,7 @@ Transform:
   m_GameObject: {fileID: 1289199904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21400002, y: 0.024000145, z: 0}
+  m_LocalPosition: {x: 0.214, y: 0.024000145, z: 0}
   m_LocalScale: {x: 0.02719378, y: 0.0397709, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15288,11 +15702,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -3.3020182, y: 0}
+  m_Offset: {x: -3.387767, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15302,8 +15716,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.682298, y: 11.22}
+  m_Size: {x: 3.9117513, y: 11.22}
   m_EdgeRadius: 0
+--- !u!114 &1289199908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289199904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 1289199909}
+--- !u!95 &1289199909
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289199904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd68132d674264709aeceb7f3ad06b0d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1290818830
 GameObject:
   m_ObjectHideFlags: 0
@@ -15503,6 +15953,8 @@ GameObject:
   - component: {fileID: 1323628750}
   - component: {fileID: 1323628751}
   - component: {fileID: 1323628752}
+  - component: {fileID: 1323628753}
+  - component: {fileID: 1323628754}
   m_Layer: 6
   m_Name: SG (2)
   m_TagString: Untagged
@@ -15519,7 +15971,7 @@ Transform:
   m_GameObject: {fileID: 1323628749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.022000002, y: -0.0029998324, z: 0}
+  m_LocalPosition: {x: 0.022, y: -0.0029998324, z: 0}
   m_LocalScale: {x: 0.02843339, y: 0.049449373, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15613,7 +16065,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -15629,6 +16081,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1274486, y: 7.66}
   m_EdgeRadius: 0
+--- !u!114 &1323628753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323628749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 1323628754}
+--- !u!95 &1323628754
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323628749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54b4b625add28416dab5f95749481735, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1324995221
 GameObject:
   m_ObjectHideFlags: 0
@@ -16595,7 +17083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ea14dc10cc41dea7a7bee2afc8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiCutController
-  pieces: []
+  pieces:
+  - {fileID: 0}
   totalPieces: 0
   piecesFinished: 0
   doneButton: {fileID: 1188142634}
@@ -16772,6 +17261,8 @@ GameObject:
   - component: {fileID: 1461579504}
   - component: {fileID: 1461579505}
   - component: {fileID: 1461579506}
+  - component: {fileID: 1461579507}
+  - component: {fileID: 1461579508}
   m_Layer: 6
   m_Name: C (2)
   m_TagString: Untagged
@@ -16882,7 +17373,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -16898,6 +17389,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.6663332, y: 10.18}
   m_EdgeRadius: 0
+--- !u!114 &1461579507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461579503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 1461579508}
+--- !u!95 &1461579508
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461579503}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f01a40dd8d930482e9dab20bf05b0703, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1472695205
 GameObject:
   m_ObjectHideFlags: 0
@@ -16909,6 +17436,8 @@ GameObject:
   - component: {fileID: 1472695206}
   - component: {fileID: 1472695207}
   - component: {fileID: 1472695208}
+  - component: {fileID: 1472695209}
+  - component: {fileID: 1472695210}
   m_Layer: 6
   m_Name: B
   m_TagString: Untagged
@@ -17019,7 +17548,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -17035,6 +17564,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1373603, y: 4.99}
   m_EdgeRadius: 0
+--- !u!114 &1472695209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472695205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 1472695210}
+--- !u!95 &1472695210
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472695205}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0aa9db13adffc487b855bcecd635de85, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1474264854
 GameObject:
   m_ObjectHideFlags: 0
@@ -18140,8 +18705,8 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1784460120}
-  - {fileID: 430939068}
   - {fileID: 124327390}
+  - {fileID: 430939068}
   m_Father: {fileID: 620821889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.368}
 --- !u!114 &1530020277
@@ -18170,8 +18735,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ea14dc10cc41dea7a7bee2afc8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiCutController
-  pieces: []
-  totalPieces: 0
+  pieces:
+  - {fileID: 1784460123}
+  - {fileID: 124327393}
+  totalPieces: 2
   piecesFinished: 0
   doneButton: {fileID: 2123981978}
   mashGate: {fileID: 1282856302}
@@ -19142,6 +19709,8 @@ GameObject:
   - component: {fileID: 1646028151}
   - component: {fileID: 1646028152}
   - component: {fileID: 1646028153}
+  - component: {fileID: 1646028154}
+  - component: {fileID: 1646028155}
   m_Layer: 6
   m_Name: SG (1)
   m_TagString: Untagged
@@ -19252,11 +19821,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.087872565, y: 0}
+  m_Offset: {x: 0.20870072, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19266,8 +19835,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9295758, y: 7.02}
+  m_Size: {x: 1.819295, y: 7.02}
   m_EdgeRadius: 0
+--- !u!114 &1646028154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646028150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 1646028155}
+--- !u!95 &1646028155
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646028150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 14c622ea28cdf4a3483c15bc8e42de82, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1647547095
 GameObject:
   m_ObjectHideFlags: 0
@@ -19899,6 +20504,8 @@ GameObject:
   - component: {fileID: 1784460120}
   - component: {fileID: 1784460121}
   - component: {fileID: 1784460122}
+  - component: {fileID: 1784460123}
+  - component: {fileID: 1784460124}
   m_Layer: 6
   m_Name: SS
   m_TagString: Untagged
@@ -20009,11 +20616,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 3.8205192, y: 0}
+  m_Offset: {x: 3.8205187, y: 0.4999485}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -20023,8 +20630,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.078999, y: 9.05}
+  m_Size: {x: 3.9315124, y: 14.049482}
   m_EdgeRadius: 0
+--- !u!114 &1784460123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784460119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 0}
+  currentAnim: {fileID: 0}
+--- !u!95 &1784460124
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784460119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7598d2d47ddd84926b314fd9ff645a4a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1805315291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 801496817825612290, guid: 0cd305c2a5058314794a1189061d0dbd, type: 3}
@@ -21136,7 +21779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
-  dragThreshold: 10
+  dragThreshold: 5
 --- !u!61 &1872054048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21288,7 +21931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
-  dragThreshold: 10
+  dragThreshold: 3
 --- !u!61 &1875061646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22401,6 +23044,8 @@ GameObject:
   - component: {fileID: 1963588283}
   - component: {fileID: 1963588284}
   - component: {fileID: 1963588285}
+  - component: {fileID: 1963588286}
+  - component: {fileID: 1963588287}
   m_Layer: 6
   m_Name: o (2)
   m_TagString: Untagged
@@ -22511,11 +23156,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.025802612, y: -0.2810021}
+  m_Offset: {x: 0.025802612, y: 0.020757854}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -22525,8 +23170,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 15.628809, y: 2.597917}
+  m_Size: {x: 15.628809, y: 3.201437}
   m_EdgeRadius: 0
+--- !u!114 &1963588286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963588282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 1963588287}
+--- !u!95 &1963588287
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963588282}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1212e450beb624e03b600a9ec92758e6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1964767367
 GameObject:
   m_ObjectHideFlags: 0
@@ -23083,6 +23764,8 @@ GameObject:
   - component: {fileID: 2060760105}
   - component: {fileID: 2060760106}
   - component: {fileID: 2060760107}
+  - component: {fileID: 2060760108}
+  - component: {fileID: 2060760109}
   m_Layer: 6
   m_Name: S
   m_TagString: Untagged
@@ -23193,11 +23876,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 3.1773758, y: 0}
+  m_Offset: {x: 3.7174191, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -23207,8 +23890,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.8495445, y: 7.28}
+  m_Size: {x: 3.9296331, y: 7.28}
   m_EdgeRadius: 0
+--- !u!95 &2060760108
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060760104}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 203328c3cad434fff95697cf7a71d664, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2060760109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060760104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 2060760108}
 --- !u!1 &2067414423
 GameObject:
   m_ObjectHideFlags: 0
@@ -24092,6 +24811,8 @@ GameObject:
   - component: {fileID: 2095724482}
   - component: {fileID: 2095724483}
   - component: {fileID: 2095724484}
+  - component: {fileID: 2095724485}
+  - component: {fileID: 2095724486}
   m_Layer: 6
   m_Name: F
   m_TagString: Untagged
@@ -24202,11 +24923,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 2.9875395, y: 0}
+  m_Offset: {x: 4.1880145, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -24216,8 +24937,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5938344, y: 13.59}
+  m_Size: {x: 3.9947844, y: 13.59}
   m_EdgeRadius: 0
+--- !u!114 &2095724485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095724481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 2095724486}
+--- !u!95 &2095724486
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095724481}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08787f962e5944c06a3ff92bcc537041, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2097926703 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 801496817825612290, guid: 0cd305c2a5058314794a1189061d0dbd, type: 3}
@@ -24297,6 +25054,8 @@ GameObject:
   - component: {fileID: 2103387207}
   - component: {fileID: 2103387208}
   - component: {fileID: 2103387209}
+  - component: {fileID: 2103387210}
+  - component: {fileID: 2103387211}
   m_Layer: 6
   m_Name: o (1)
   m_TagString: Untagged
@@ -24407,11 +25166,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 2.7333827}
+  m_Offset: {x: 0, y: 2.345405}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -24421,8 +25180,44 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 16.660063, y: 1.7022839}
+  m_Size: {x: 16.660063, y: 2.3058052}
   m_EdgeRadius: 0
+--- !u!114 &2103387210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103387206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  mashGate: {fileID: 1282856302}
+  currentAnim: {fileID: 2103387211}
+--- !u!95 &2103387211
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103387206}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8468e4b42ed284a178f63aec050a2b56, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2105280003
 GameObject:
   m_ObjectHideFlags: 0
@@ -24528,7 +25323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
-  dragThreshold: 10
+  dragThreshold: 3
 --- !u!61 &2105280007
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24878,8 +25673,8 @@ Transform:
   m_Children:
   - {fileID: 1011075230}
   - {fileID: 2095724482}
-  - {fileID: 834138927}
   - {fileID: 1289199905}
+  - {fileID: 834138927}
   m_Father: {fileID: 620821889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2125583366
@@ -24908,8 +25703,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ea14dc10cc41dea7a7bee2afc8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiCutController
-  pieces: []
-  totalPieces: 0
+  pieces:
+  - {fileID: 2095724485}
+  - {fileID: 1289199908}
+  totalPieces: 2
   piecesFinished: 0
   doneButton: {fileID: 1174412525}
   mashGate: {fileID: 1282856302}

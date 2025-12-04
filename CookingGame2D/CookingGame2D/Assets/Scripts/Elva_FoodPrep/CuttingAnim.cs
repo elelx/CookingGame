@@ -45,7 +45,7 @@ public class CuttingAnim : MonoBehaviour
 
         Debug.Log("Knife ENTERED: " + collision.name);
 
-        currentAnim = collision.GetComponent<Animator>();
+        currentAnim = GetComponentInChildren<Animator>();
 
         played = false;
 

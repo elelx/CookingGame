@@ -12,22 +12,22 @@ public class PressKeys : MonoBehaviour
 
     public bool canCut;
     public bool FirstCond;
-    public bool SecondCond;
+    //public bool SecondCond;
     public bool AllCondMet;
 
 
     public float pressLifetime = 0.45f;
 
-    public KeyCode[] keys = { KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.J, KeyCode.K, KeyCode.L };
+    public KeyCode[] keys = { KeyCode.A, KeyCode.S, KeyCode.D };//, KeyCode.J, KeyCode.K, KeyCode.L
 
-   // public Text statusText;
+    // public Text statusText;
 
     float timeA;
     float timeS;
     float timeD;
-    float timeJ;
-    float timeK;
-    float timeL;
+    //float timeJ;
+    //float timeK;
+    //float timeL;
 
     // Start is called before the first frame update
     void Start()
@@ -69,21 +69,21 @@ public class PressKeys : MonoBehaviour
             timeD = now;
             Debug.Log("Pressed D");
         }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            timeJ = now;
-            Debug.Log("Pressed J");
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            timeK = now;
-            Debug.Log("Pressed K");
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            timeL = now;
-            Debug.Log("Pressed L");
-        }
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    timeJ = now;
+        //    Debug.Log("Pressed J");
+        //}
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    timeK = now;
+        //    Debug.Log("Pressed K");
+        //}
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    timeL = now;
+        //    Debug.Log("Pressed L");
+        //}
 
 
         // check if each key was pressed
@@ -91,15 +91,15 @@ public class PressKeys : MonoBehaviour
         bool aHot = now - timeA <= pressLifetime;
         bool sHot = now - timeS <= pressLifetime;
         bool dHot = now - timeD <= pressLifetime;
-        bool jHot = now - timeJ <= pressLifetime;
-        bool kHot = now - timeK <= pressLifetime;
-        bool lHot = now - timeL <= pressLifetime;
+        //bool jHot = now - timeJ <= pressLifetime;
+        //bool kHot = now - timeK <= pressLifetime;
+        //bool lHot = now - timeL <= pressLifetime;
 
         // left and right side checks
 
         FirstCond = aHot && sHot && dHot;
 
-        SecondCond = jHot && kHot && lHot;
+        //SecondCond = jHot && kHot && lHot;
 
         AllCondMet = FirstCond;
 
@@ -110,6 +110,6 @@ public class PressKeys : MonoBehaviour
 
     void ResetKeys()
     {
-        timeA = timeS = timeD = timeJ = timeK = timeL = -999f;
+        timeA = timeS = timeD  = -999f;//= timeJ = timeK = timeL
     }
 }
