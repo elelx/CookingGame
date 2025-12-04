@@ -22,7 +22,10 @@ public class SoupManager : MonoBehaviour
 
     [Header("Result Button")]
     public Image resultButtonImage;
+
    
+
+
 
     private List<string> currentPicked = new List<string>();
     private Recipe activeRecipe = null;

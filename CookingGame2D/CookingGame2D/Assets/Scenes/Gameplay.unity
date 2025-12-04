@@ -515,7 +515,7 @@ MonoBehaviour:
   - Sea Kelp
   - Glowing Onions
   soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: 1983501393, guid: ef05e16c740ad854ea459467b1fb3ac3, type: 3}
+  soupSprite: {fileID: -730231155744627198, guid: 9d9f9cf9ade6d4189aa76ee01e60ceb9, type: 3}
   isTrash: 0
 --- !u!1 &82496310
 GameObject:
@@ -2380,7 +2380,7 @@ MonoBehaviour:
   - Red Meat Stock
   - Sausage(???)
   soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: -1474082043, guid: ef05e16c740ad854ea459467b1fb3ac3, type: 3}
+  soupSprite: {fileID: 8909284838664939477, guid: eeda6dbf5acd24abda74e7dc8985138a, type: 3}
   isTrash: 0
 --- !u!1 &178053897
 GameObject:
@@ -2943,7 +2943,7 @@ MonoBehaviour:
   - Magic Mushroom
   - Glowing Onions
   soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: 865496699, guid: ef05e16c740ad854ea459467b1fb3ac3, type: 3}
+  soupSprite: {fileID: 4104144469810256062, guid: 1b35fa0a65f8d485f8758cc596ba9249, type: 3}
   isTrash: 1
 --- !u!1 &208914399
 GameObject:
@@ -3555,7 +3555,7 @@ MonoBehaviour:
   - Bug Green Goo
   - Cursed Carrot
   soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: 1820107918, guid: ef05e16c740ad854ea459467b1fb3ac3, type: 3}
+  soupSprite: {fileID: 4351338647929047994, guid: 2fc3510a1881447e18bf9d9796bdf9a4, type: 3}
   isTrash: 0
 --- !u!1 &266769065
 GameObject:
@@ -4652,6 +4652,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -94
       objectReference: {fileID: 0}
+    - target: {fileID: 627329845204060958, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4198470831451018612, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
       propertyPath: m_Name
       value: Button (1)
@@ -4663,7 +4667,7 @@ PrefabInstance:
     - target: {fileID: 4738001894162256563, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6408199432028777166, guid: 32c76e7edba8cd9449082d742850a7bb, type: 3}
+      objectReference: {fileID: 8909284838664939477, guid: eeda6dbf5acd24abda74e7dc8985138a, type: 3}
     - target: {fileID: 6264044424207840659, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
       propertyPath: soupManager
       value: 
@@ -4705,6 +4709,18 @@ PrefabInstance:
       value: 166.693
       objectReference: {fileID: 0}
     - target: {fileID: 6611447472057222544, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.026122
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611447472057222544, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.575423
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611447472057222544, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611447472057222544, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -4734,11 +4750,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6611447472057222544, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 465.5
+      value: -468
       objectReference: {fileID: 0}
     - target: {fileID: 6611447472057222544, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -99.8
+      value: -295
       objectReference: {fileID: 0}
     - target: {fileID: 6611447472057222544, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5589,8 +5605,8 @@ MonoBehaviour:
   - {fileID: 420463447}
   - {fileID: 204165030}
   potRenderer: {fileID: 1882652551}
-  potIdleSprite: {fileID: -1088029651716828591, guid: 04cb7b6f5df3b427d9d0ffa761a15a39, type: 3}
-  potCookingSprite: {fileID: -855298285791758126, guid: f4b94b58651812e45bf8a290b540d605, type: 3}
+  potIdleSprite: {fileID: 3112589160528298819, guid: 51b63bcc66a7249be96bf711d334d8ed, type: 3}
+  potCookingSprite: {fileID: 8884837070125672661, guid: 93a00f8eb393749e69fcc0ff341ec906, type: 3}
   resultButtonImage: {fileID: 1035584739}
 --- !u!1 &411391597
 GameObject:
@@ -5780,7 +5796,7 @@ MonoBehaviour:
   - Giant Sea Snail
   - Sea Kelp
   soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: 7641124845627605941, guid: ef05e16c740ad854ea459467b1fb3ac3, type: 3}
+  soupSprite: {fileID: -2778281876870342817, guid: 5bab1c43865594a53a87b34f7052a326, type: 3}
   isTrash: 0
 --- !u!1 &430939067
 GameObject:
@@ -7060,12 +7076,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557352781}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.10741, y: 0.084, z: 0}
-  m_LocalScale: {x: 0.020847868, y: 0.03234119, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.107410006, y: 0.083999954, z: 0}
+  m_LocalScale: {x: 0.020847868, y: 0.032341193, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1580199313}
+  m_Father: {fileID: 1218885529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &557352783
 SpriteRenderer:
@@ -7159,7 +7175,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 4.905812, y: 0}
+  m_Offset: {x: 0.50149155, y: 3.9187365}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7169,7 +7185,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.8784285, y: 14.1}
+  m_Size: {x: 12.687069, y: 6.2625275}
   m_EdgeRadius: 0
 --- !u!95 &557352785
 Animator:
@@ -7467,7 +7483,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1580199313}
+  - {fileID: 1218885529}
   - {fileID: 13256695}
   - {fileID: 976483299}
   - {fileID: 2125583365}
@@ -7799,12 +7815,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645345218}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.009818, y: -0.08798613, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.009818, y: -0.08798617, z: 0}
   m_LocalScale: {x: 0.020403376, y: 0.03366557, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1580199313}
+  m_Father: {fileID: 1218885529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &645345220
 SpriteRenderer:
@@ -12323,7 +12339,7 @@ MonoBehaviour:
   - T Bone Steak
   - Garlic
   soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: -2432301806248295829, guid: ef05e16c740ad854ea459467b1fb3ac3, type: 3}
+  soupSprite: {fileID: 2002064647875999573, guid: a11004c93328844ea95659e7092ea98a, type: 3}
   isTrash: 0
 --- !u!1 &1000869609
 GameObject:
@@ -13023,12 +13039,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051637143}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.00000018567, z: 0}
-  m_LocalScale: {x: 0.024631266, y: 0.026170721, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.024631266, y: 0.026170723, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1580199313}
+  m_Father: {fileID: 1218885529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1051637145
 SpriteRenderer:
@@ -14546,6 +14562,43 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1363083654905704209, guid: 0cd305c2a5058314794a1189061d0dbd, type: 3}
   m_PrefabInstance: {fileID: 887970272}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1218885528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218885529}
+  m_Layer: 6
+  m_Name: TBONE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1218885529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218885528}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1580199313}
+  - {fileID: 1051637144}
+  - {fileID: 557352782}
+  - {fileID: 1939835712}
+  - {fileID: 1444335357}
+  - {fileID: 645345219}
+  m_Father: {fileID: 620821889}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1230992358
 GameObject:
   m_ObjectHideFlags: 0
@@ -16681,12 +16734,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444335356}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.080764, y: 0.03558757, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.080764, y: 0.035587654, z: 0}
   m_LocalScale: {x: 0.020403376, y: 0.03366557, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1580199313}
+  m_Father: {fileID: 1218885529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1444335358
 SpriteRenderer:
@@ -17000,7 +17053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AppearIngre
   ingredients:
-  - {fileID: 1580199312}
+  - {fileID: 1218885528}
   - {fileID: 1530020275}
   - {fileID: 13256694}
   - {fileID: 2125583364}
@@ -17760,7 +17813,7 @@ MonoBehaviour:
   - Spotted Shrimp
   - Glowing Tuna
   soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: -1017765716, guid: ef05e16c740ad854ea459467b1fb3ac3, type: 3}
+  soupSprite: {fileID: 5307777263949698681, guid: 2ca755fe91ff742659cdc8e5119ffe60, type: 3}
   isTrash: 0
 --- !u!1 &1497445501
 GameObject:
@@ -18931,7 +18984,7 @@ MonoBehaviour:
   - Glowing Onions
   - T Bone Steak
   soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: 7781682652552636025, guid: ef05e16c740ad854ea459467b1fb3ac3, type: 3}
+  soupSprite: {fileID: -1585131837271446423, guid: e715c9edc1cbe41b8bb0ef1ca0715d40, type: 3}
   isTrash: 0
 --- !u!1 &1580199312
 GameObject:
@@ -18949,7 +19002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1580199313
 Transform:
   m_ObjectHideFlags: 0
@@ -18958,17 +19011,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580199312}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1051637144}
-  - {fileID: 557352782}
-  - {fileID: 1939835712}
-  - {fileID: 1444335357}
-  - {fileID: 645345219}
-  m_Father: {fileID: 620821889}
+  m_Children: []
+  m_Father: {fileID: 1218885529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1580199314
 MonoBehaviour:
@@ -20278,9 +20326,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CuttingAnim, Assembly-CSharp
-        m_MethodName: ResetCutPiece
+      - m_Target: {fileID: 2125583367}
+        m_TargetAssemblyTypeName: MultiCutController, Assembly-CSharp
+        m_MethodName: ResetIngredient
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20632,7 +20680,7 @@ MonoBehaviour:
   - Green Veggi Stock
   - Sea Kelp
   soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: -760040478, guid: ef05e16c740ad854ea459467b1fb3ac3, type: 3}
+  soupSprite: {fileID: 8970163668694539027, guid: cb1c8843910a14163a0d09e0f9687ad1, type: 3}
   isTrash: 0
 --- !u!1 &1828359212
 GameObject:
@@ -22269,12 +22317,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939835711}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.024596, y: 0.059793867, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.024596, y: 0.059793893, z: 0}
   m_LocalScale: {x: 0.020403376, y: 0.03366557, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1580199313}
+  m_Father: {fileID: 1218885529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1939835713
 SpriteRenderer:
@@ -24533,7 +24581,7 @@ MonoBehaviour:
   - Giant Sea Snail
   - Sea Kelp
   soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: -7576874432042752839, guid: ef05e16c740ad854ea459467b1fb3ac3, type: 3}
+  soupSprite: {fileID: -2778281876870342817, guid: 5bab1c43865594a53a87b34f7052a326, type: 3}
   isTrash: 0
 --- !u!1 &2103387206
 GameObject:
