@@ -43,10 +43,6 @@ public class CuttingAnim : MonoBehaviour
             return;
         }
 
-        Debug.Log("Knife ENTERED: " + collision.name);
-
-        currentAnim = GetComponentInChildren<Animator>();
-
         played = false;
 
         inCutState = false;
@@ -55,6 +51,8 @@ public class CuttingAnim : MonoBehaviour
     void OnTriggerStay2D(Collider2D collision)
     {
         if (!collision.CompareTag("Knife")) return;
+
+    
 
         if (currentAnim == null) return;
         TryPlayCut();
@@ -78,10 +76,14 @@ public class CuttingAnim : MonoBehaviour
 
     void TryPlayCut()
     {
+        currentAnim = GetComponentInChildren<Animator>();
+
         if (played || currentAnim == null) return;
 
         bool mouseHeld = Input.GetMouseButton(0);  // dragging
         bool gateOK = (mashGate == null) ? true : mashGate.canCut;
+
+
         bool shouldCut = mouseHeld && gateOK;
 
         if (shouldCut)
