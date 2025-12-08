@@ -7,9 +7,17 @@ public class Cut : MonoBehaviour
     public float minMoveSpeed = 0.05f;
     public bool isMoving;
 
+    public AudioSource cutLoopSFX;
+
     void Start()
     {
         lastPos = transform.position;
+
+        if (cutLoopSFX)
+        {
+            cutLoopSFX.loop = true;
+            cutLoopSFX.playOnAwake = false;
+        }
     }
 
     void OnMouseDown()
@@ -41,5 +49,18 @@ public class Cut : MonoBehaviour
 
         lastPos = transform.position;
     }
+
+    public void StartCutSound()
+    {
+        if (cutLoopSFX && !cutLoopSFX.isPlaying)
+            cutLoopSFX.Play();
+    }
+
+    public void StopCutSound()
+    {
+        if (cutLoopSFX && cutLoopSFX.isPlaying)
+            cutLoopSFX.Stop();
+    }
+
 
 }

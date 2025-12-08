@@ -5,7 +5,10 @@ using System.Collections.Generic;
 
 public class CuttingAnim : MonoBehaviour
 {
-  
+
+    public AudioSource sfx;
+    public AudioClip[] finishClips;
+
     public PressKeys mashGate;
 
     public Animator currentAnim;
@@ -49,6 +52,15 @@ public class CuttingAnim : MonoBehaviour
         bool gateOK = mashGate.canCut;
         bool knifeMoving = knife.isMoving;
 
+        if (gateOK && knifeMoving)
+        {
+            knife.StartCutSound();
+        }
+        else
+        {
+            knife.StopCutSound();
+        }
+
         if (!gateOK || !knifeMoving)
         {
             if (currentAnim)
@@ -82,6 +94,11 @@ public class CuttingAnim : MonoBehaviour
             currentAnim.speed = 0f;
         }
 
+        Cut knife = collision.GetComponent<Cut>();
+        if (knife)
+            knife.StopCutSound();
+
+
         currentAnim = null;
 
     }
@@ -89,7 +106,12 @@ public class CuttingAnim : MonoBehaviour
 
     public void StopCut()
     {
-     
+        if (finishClips != null && finishClips.Length > 0 && sfx)
+        {
+            AudioClip clip = finishClips[Random.Range(0, finishClips.Length)];
+            sfx.PlayOneShot(clip);
+        }
+
 
         Debug.Log("cut finished!");
 

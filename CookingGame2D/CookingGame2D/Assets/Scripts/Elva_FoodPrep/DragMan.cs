@@ -13,9 +13,11 @@ public class DragMan : MonoBehaviour
     public GameObject snailBody;
     public GameObject snailshell;
 
-    public GameObject finishedShrimp;
     public GameObject newMushroomPrefab;
     public GameObject garlic;
+    public GameObject ingarlic;
+
+    public GameObject doneButton;
 
     GameObject spawnedMushroom;
     public PressKeys cutScript; 
@@ -25,7 +27,8 @@ public class DragMan : MonoBehaviour
         foreach (var p in pieces)
             p.manager = this;
 
-    //    ResetAll();
+        snailBody.SetActive(false);
+        //    ResetAll();
 
 
     }
@@ -48,8 +51,7 @@ public class DragMan : MonoBehaviour
         switch (prepType)
         {
             case PrepType.Shrimp:
-
-                finishedShrimp.SetActive(true);
+                ShowDoneButton();
 
                 break;
 
@@ -64,13 +66,19 @@ public class DragMan : MonoBehaviour
 
             case PrepType.Mushroom:
 
-                spawnedMushroom =
-                      Instantiate(newMushroomPrefab, transform.position, Quaternion.identity);
+                spawnedMushroom = Instantiate(
+                newMushroomPrefab,
+                pieces[0].transform.position,
+                Quaternion.identity
+            );
+                ShowDoneButton();
+
                 break;
 
             case PrepType.Garlic:
 
                 garlic.SetActive(true);
+                ingarlic.SetActive(false);
 
                 cutScript.enabled = true;
                 break;
@@ -78,7 +86,11 @@ public class DragMan : MonoBehaviour
 
         Debug.Log($"{prepType} completed!");
     }
-
+    public void ShowDoneButton()
+    {
+        if (doneButton)
+            doneButton.SetActive(true);
+    }
     public void ResetAll()
     {
         Debug.Log("RESET ALL");
@@ -95,11 +107,14 @@ public class DragMan : MonoBehaviour
 
         if (snailBody) snailBody.SetActive(false);
         if (snailshell) snailshell.SetActive(true);
-        if (finishedShrimp) finishedShrimp.SetActive(false);
+     
         if (garlic) garlic.SetActive(false);
 
         if (spawnedMushroom)
             Destroy(spawnedMushroom);
+
+        if (doneButton)
+            doneButton.SetActive(false);
     }
 
 }

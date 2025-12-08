@@ -13,6 +13,9 @@ public class SoupManager : MonoBehaviour
     public Sprite potIdleSprite;
     public Sprite potCookingSprite;
 
+    [Header("Infinite Ingredients (no inventory)")]
+    public List<string> infiniteIngredients;
+
     [Header("Result Button")]
     public Image resultButtonImage;
 
@@ -30,6 +33,10 @@ public class SoupManager : MonoBehaviour
 
     public AudioSource sfx;
     public AudioClip emptyClip;
+    public AudioClip addIngredientClip;
+  
+
+
 
     void Start()
     {
@@ -38,7 +45,6 @@ public class SoupManager : MonoBehaviour
         if (resultButtonImage != null)
             resultButtonImage.enabled = false;
 
-        //Dictionary for ingredients
         ingredientLookup = new Dictionary<string, GameObject>();
         for (int i = 0; i < ingredientNames.Count; i++)
         {
@@ -46,6 +52,8 @@ public class SoupManager : MonoBehaviour
             ingredientLookup[key] = ingredientSpriteObjects[i];
             ingredientSpriteObjects[i].SetActive(false);
         }
+
+      
     }
 
     public void AddIngredient(string ingredient)
@@ -54,13 +62,20 @@ public class SoupManager : MonoBehaviour
 
         string norm = Norm(ingredient);
 
-        if (!Inventory.Instance.HasItem(norm))
-        {
-            PlayEmptyFeedback(norm);
-            return;
-        }
+        bool isInfinite = infiniteIngredients
+            .Select(Norm)
+            .Contains(norm);
 
-        Inventory.Instance.UseItem(norm);
+        if (!isInfinite)
+        {
+            if (!Inventory.Instance.HasItem(norm))
+            {
+                PlayEmptyFeedback(norm);
+                return;
+            }
+
+            Inventory.Instance.UseItem(norm);
+        }
 
         currentPicked.Add(norm);
 
@@ -68,6 +83,9 @@ public class SoupManager : MonoBehaviour
             ingredientLookup[norm].SetActive(true);
 
         potRenderer.sprite = potCookingSprite;
+
+        if (sfx && addIngredientClip)
+            sfx.PlayOneShot(addIngredientClip);
 
         CheckRecipes();
     }
@@ -145,6 +163,31 @@ public class SoupManager : MonoBehaviour
 
         Debug.Log("No more " + ingredient);
     }
+
+    public void StartOverSoup()
+    {
+        if (currentPicked.Count == 0) return;
+
+        currentPicked.Clear();
+        activeRecipe = null;
+
+        potRenderer.sprite = potIdleSprite;
+
+        if (resultButtonImage != null)
+        {
+            resultButtonImage.enabled = false;
+        }
+  
+
+        foreach (var obj in ingredientSpriteObjects)
+        {
+            obj.SetActive(false);
+        }
+        
+
+ 
+    }
+
 
 
 }
