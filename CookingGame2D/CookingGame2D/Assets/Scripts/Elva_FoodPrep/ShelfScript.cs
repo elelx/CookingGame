@@ -38,11 +38,11 @@ public class ShelfScript : MonoBehaviour
 
     void Update()
     {
-        // Press Q to get shelf
-        if (Keyboard.current != null && Keyboard.current.qKey.wasPressedThisFrame)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             ToggleSlide();
         }
+
     }
 
     void ToggleSlide()

@@ -8,12 +8,12 @@ public class PressKeys : MonoBehaviour
 {
     public GameRotation testGme;
     public bool isSceneOActive;
-
-
     public bool canCut;
-    public bool FirstCond;
-    public bool SecondCond;
-    public bool AllCondMet;
+
+
+    //public bool FirstCond;
+    //public bool SecondCond;
+    //public bool AllCondMet;
 
 
     public float pressLifetime = 0.45f;
@@ -32,6 +32,7 @@ public class PressKeys : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canCut = false;
         ResetKeys();
     }
 
@@ -91,26 +92,24 @@ public class PressKeys : MonoBehaviour
         bool aHot = now - timeA <= pressLifetime;
         bool sHot = now - timeS <= pressLifetime;
         bool dHot = now - timeD <= pressLifetime;
+
         bool jHot = now - timeJ <= pressLifetime;
         bool kHot = now - timeK <= pressLifetime;
         bool lHot = now - timeL <= pressLifetime;
 
         // left and right side checks
 
-        FirstCond = aHot && sHot && dHot;
+        bool leftHand = aHot && sHot && dHot;
+        bool rightHand = jHot && kHot && lHot;
 
-        SecondCond = jHot && kHot && lHot;
-
-        AllCondMet = FirstCond;
-
-        canCut = AllCondMet;
-
+        
+        canCut = leftHand && rightHand;
 
     }
 
     void ResetKeys()
     {
-        timeA = timeS = timeD = timeJ = timeK = timeL = 999;
-        //timeA = timeS = timeD  = -999f;//= timeJ = timeK = timeL
+        timeA = timeS = timeD = timeJ = timeK = timeL = -999f;
+
     }
 }

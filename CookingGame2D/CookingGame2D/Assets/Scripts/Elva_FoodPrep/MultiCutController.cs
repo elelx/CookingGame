@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MultiCutController : MonoBehaviour
 {
+    public string ingredientName = "fish";
+
     public CuttingAnim[] pieces;   
     public int totalPieces;        
     public int piecesFinished;     
@@ -43,6 +45,13 @@ public class MultiCutController : MonoBehaviour
 
         }
     }
+
+    public void OnDoneButtonPressed()
+    {
+        Inventory.Instance.AddItem(ingredientName);
+        ResetIngredient();
+    }
+
 
     public void ResetIngredient()
     {

@@ -54,6 +54,44 @@ public class Inventory : MonoBehaviour
         Debug.Log("kelp: " + kelp);
 
     }
+
+    public bool HasItem(string itemName)
+    {
+        itemName = itemName.ToLower();
+
+        if (itemName == "shrimp") return shrimp > 0;
+        if (itemName == "snail") return snail > 0;
+        if (itemName == "mushroom") return mushroom > 0;
+        if (itemName == "tbone") return tbone > 0;
+        if (itemName == "fish") return fish > 0;
+        if (itemName == "sausge") return sausge > 0;
+        if (itemName == "bug") return bug > 0;
+        if (itemName == "garlic") return garlic > 0;
+        if (itemName == "onion") return onion > 0;
+        if (itemName == "carrot") return carrot > 0;
+        if (itemName == "kelp") return kelp > 0;
+
+        return false;
+    }
+
+    public void UseItem(string itemName)
+    {
+        itemName = itemName.ToLower();
+
+        if (itemName == "shrimp" && shrimp > 0) shrimp--;
+        if (itemName == "snail" && snail > 0) snail--;
+        if (itemName == "mushroom" && mushroom > 0) mushroom--;
+        if (itemName == "tbone" && tbone > 0) tbone--;
+        if (itemName == "fish" && fish > 0) fish--;
+        if (itemName == "sausge" && sausge > 0) sausge--;
+        if (itemName == "bug" && bug > 0) bug--;
+        if (itemName == "garlic" && garlic > 0) garlic--;
+        if (itemName == "onion" && onion > 0) onion--;
+        if (itemName == "carrot" && carrot > 0) carrot--;
+        if (itemName == "kelp" && kelp > 0) kelp--;
+    }
+
+
 }
 
 

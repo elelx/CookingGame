@@ -34,4 +34,11 @@ public class Drag : MonoBehaviour
             gameObject.SetActive(false); 
         }
     }
+
+    public void ResetDrag()
+    {
+        done = false;
+        transform.position = startPos;
+        gameObject.SetActive(true);
+    }
 }

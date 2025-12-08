@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class DragMan : MonoBehaviour
 {
-    public Drag[] pieces; 
+    public Drag[] pieces;
+    public CuttingAnim[] cutPieces;
+
     int removedCount = 0;
 
     public enum PrepType { Shrimp, Snail, Mushroom, Garlic }
@@ -12,10 +14,10 @@ public class DragMan : MonoBehaviour
     public GameObject snailshell;
 
     public GameObject finishedShrimp;
-    public GameObject newMushroom;
+    public GameObject newMushroomPrefab;
     public GameObject garlic;
 
-
+    GameObject spawnedMushroom;
     public PressKeys cutScript; 
 
     void Start()
@@ -23,7 +25,7 @@ public class DragMan : MonoBehaviour
         foreach (var p in pieces)
             p.manager = this;
 
-        snailBody.SetActive(false);
+    //    ResetAll();
 
 
     }
@@ -32,7 +34,7 @@ public class DragMan : MonoBehaviour
     {
         removedCount +=1;
 
-        if (removedCount == pieces.Length)
+        if (removedCount >= pieces.Length)
         {
             OnCompleted();
         }
@@ -53,33 +55,22 @@ public class DragMan : MonoBehaviour
 
             case PrepType.Snail:
 
-                Debug.Log("Switch matched: SNAIL");
-
-                Debug.Log("snailBody is " + (snailBody == null ? "NULL" : "NOT NULL"));
-
                 snailshell.SetActive(false);
                 snailBody.SetActive(true);
 
                 cutScript.enabled = true;
 
-               
-
-
-
-
-
                 break;
 
             case PrepType.Mushroom:
 
-                Instantiate(newMushroom, transform.position, Quaternion.identity);
-
+                spawnedMushroom =
+                      Instantiate(newMushroomPrefab, transform.position, Quaternion.identity);
                 break;
 
             case PrepType.Garlic:
 
                 garlic.SetActive(true);
-
 
                 cutScript.enabled = true;
                 break;
@@ -87,4 +78,28 @@ public class DragMan : MonoBehaviour
 
         Debug.Log($"{prepType} completed!");
     }
+
+    public void ResetAll()
+    {
+        Debug.Log("RESET ALL");
+
+        removedCount = 0;
+        foreach (var p in pieces)
+            p.ResetDrag();
+
+        foreach (var c in cutPieces)
+            c.ResetCutPiece();
+
+        if (cutScript)
+            cutScript.enabled = false;
+
+        if (snailBody) snailBody.SetActive(false);
+        if (snailshell) snailshell.SetActive(true);
+        if (finishedShrimp) finishedShrimp.SetActive(false);
+        if (garlic) garlic.SetActive(false);
+
+        if (spawnedMushroom)
+            Destroy(spawnedMushroom);
+    }
+
 }

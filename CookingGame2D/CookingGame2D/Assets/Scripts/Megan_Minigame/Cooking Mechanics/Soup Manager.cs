@@ -28,6 +28,9 @@ public class SoupManager : MonoBehaviour
     private string Norm(string s) => s.Trim().ToLower();
     public string currentSoupName => activeRecipe != null ? activeRecipe.soupName : null;
 
+    public AudioSource sfx;
+    public AudioClip emptyClip;
+
     void Start()
     {
         potRenderer.sprite = potIdleSprite;
@@ -50,15 +53,25 @@ public class SoupManager : MonoBehaviour
         if (activeRecipe != null) return;
 
         string norm = Norm(ingredient);
+
+        if (!Inventory.Instance.HasItem(norm))
+        {
+            PlayEmptyFeedback(norm);
+            return;
+        }
+
+        Inventory.Instance.UseItem(norm);
+
         currentPicked.Add(norm);
 
-        // Show ingredient sprite inside pot
         if (ingredientLookup.ContainsKey(norm))
             ingredientLookup[norm].SetActive(true);
 
         potRenderer.sprite = potCookingSprite;
+
         CheckRecipes();
     }
+
 
     private void CheckRecipes()
     {
@@ -123,5 +136,15 @@ public class SoupManager : MonoBehaviour
     }
 
     public bool HasFinishedSoup() => activeRecipe != null;
+
+
+    void PlayEmptyFeedback(string ingredient)
+    {
+        if (sfx && emptyClip)
+            sfx.PlayOneShot(emptyClip);
+
+        Debug.Log("No more " + ingredient);
+    }
+
 
 }
