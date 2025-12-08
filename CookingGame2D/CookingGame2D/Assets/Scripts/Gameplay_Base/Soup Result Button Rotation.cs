@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoupResultButtonRotation : MonoBehaviour
 {
@@ -7,10 +8,19 @@ public class SoupResultButtonRotation : MonoBehaviour
 
     public GameObject soupResultButton;   // the button prefab in scene
 
+    public bool inCorrectPosition = false;
+    public bool soupIsReady = false;
+    private Button soupResultButtonUI;
+
+    private void Start()
+    {
+        soupResultButtonUI = soupResultButton.GetComponent<Button>();
+
+    }
     void Update()
     {
-        bool inCorrectPosition = rotationCheck.c2 && rotationCheck.p5;
-        bool soupIsReady = soupManager.HasFinishedSoup();
+        inCorrectPosition = rotationCheck.c2 && rotationCheck.p5;
+        soupIsReady = soupManager.HasFinishedSoup();
 
         // Only enable Image when both true
         if (soupResultButton != null)
@@ -18,6 +28,7 @@ public class SoupResultButtonRotation : MonoBehaviour
             var img = soupResultButton.GetComponent<UnityEngine.UI.Image>();
             if (img != null)
                 img.enabled = inCorrectPosition && soupIsReady;
+                soupResultButtonUI.interactable = inCorrectPosition && soupIsReady;
         }
     }
 }

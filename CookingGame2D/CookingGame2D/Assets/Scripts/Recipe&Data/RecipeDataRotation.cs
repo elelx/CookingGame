@@ -36,7 +36,6 @@ public class RecipeDataRotation : MonoBehaviour
             }
         }
 
-
         else
         {
             isSceneOActive = false;
@@ -47,9 +46,19 @@ public class RecipeDataRotation : MonoBehaviour
 
     void SetButtons(bool active)
     {
+
         foreach (GameObject b in buttons)
         {
             b.SetActive(active);
+            FlipSprite bScript = b.GetComponent<FlipSprite>();
+            if (bScript == null)
+            {
+                return;
+            }
+            else
+            {
+                bScript.TurnoffScreens();
+            }
         }
     }
 }
