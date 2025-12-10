@@ -15,9 +15,11 @@ public class BasicCustomerManager : MonoBehaviour
     public CustomerInteractionManager interactionManager;
 
     [Header("Settings")]
-    public float answerTimeLimit = 10f;
+    public float answerTimeLimit = 15f;
     private int angerLevel = 0;
     private float timer = 0f;
+    public bool timerIsOn = true;
+    public bool rightScene = true;
 
     void Update()
     {
@@ -47,6 +49,7 @@ public class BasicCustomerManager : MonoBehaviour
     {
         serviceText.text = customerServiceLine;
         angerLevel = 0;
+        timerIsOn = true;
         UpdateSpriteAnger();
         ResetCoversationTimer();
     }
@@ -81,20 +84,30 @@ public class BasicCustomerManager : MonoBehaviour
 
     }
 
+    public void PauseTimer()
+    {
+        timerIsOn = false;
+    }
+
     //  EMOTIONS 
     private void EmotionsTimer()
     {
         //Emotions Timer
-        timer -= Time.deltaTime;
-        if (timer <= 0f)
+        if (timerIsOn == true && rightScene == true)
         {
-            IncreaseAnger();
-            ResetCoversationTimer();
+            timer -= Time.deltaTime;
+            if (timer <= 0f)
+            {
+                IncreaseAnger();
+                ResetCoversationTimer();
+            }
         }
+        
     }
 
     private void ResetCoversationTimer()
     {
+        Debug.Log("ResetTimer");
         timer = answerTimeLimit;
     }
 
@@ -105,7 +118,7 @@ public class BasicCustomerManager : MonoBehaviour
         UpdateSpriteAnger();
     }
 
-    private void ResetEmotion()
+    public void ResetEmotion()
     {
         angerLevel = 0;
         UpdateSpriteAnger();

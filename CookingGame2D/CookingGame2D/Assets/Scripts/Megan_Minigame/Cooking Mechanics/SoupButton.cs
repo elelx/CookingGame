@@ -9,9 +9,12 @@ public class SoupButton : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            ServeSoup();
+            if (CustomerInteractionManager.playerIsTyping == false)
+            {
+                ServeSoup();
+            }
         }
     }
 
@@ -42,12 +45,18 @@ public class SoupButton : MonoBehaviour
 
         GameObject currentCustomer = customerFolder.GetChild(currentIndex).gameObject;
 
+        CustomerProfile profile = Object.FindFirstObjectByType<CustomerProfile>(); //Grab Active Customer Profile Script
+
+        //Pause emotion timer
+        profile.PauseEmotionTimer();
+
         // Score the soup
-        CustomerProfile profile = currentCustomer.GetComponent<CustomerProfile>();
         if (profile != null && soupManager.HasFinishedSoup())
         {
             profile.ReceiveSoup(soupManager.currentSoupName);
         }
+
+        yield return new WaitForSeconds(2f);
 
         interactionManager?.EndInteraction();
 

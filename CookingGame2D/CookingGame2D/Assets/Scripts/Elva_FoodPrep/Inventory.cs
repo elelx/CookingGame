@@ -12,10 +12,10 @@ public class Inventory : MonoBehaviour
     private int sausge = 0;
     private int fish = 0;
     private int carrot = 0;
-    private int onion = 0;
+    private int onion = 1;
     private int garlic = 0;
     private int bug = 0;
-    private int kelp = 0;
+    private int kelp = 1;
 
 
     void Awake()

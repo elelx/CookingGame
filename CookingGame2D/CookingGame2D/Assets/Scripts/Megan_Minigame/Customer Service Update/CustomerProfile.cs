@@ -38,8 +38,16 @@ public class CustomerProfile : MonoBehaviour
         //ADD Make Character Profile dissapear
     }
 
+    public void PauseEmotionTimer()
+    {
+        customerManager.PauseTimer();
+    }
+
     public void ItemResponce()
     {
+        customerManager = GetComponent<BasicCustomerManager>();
+        customerManager.ResetEmotion();
+
         // Favorite
         if (targetMenuItem == favoriteMenuItems)
         {
@@ -80,6 +88,49 @@ public class CustomerProfile : MonoBehaviour
         }
 
         Debug.Log("Unknown food (0 points)");
+        if (reactionText != null)
+            reactionText.text = "I don't know what this is...";
+    }
+
+    public void ItemResponceUnscored()
+    {
+        customerManager = GetComponent<BasicCustomerManager>();
+        customerManager.ResetEmotion();
+
+        // Favorite
+        if (targetMenuItem == favoriteMenuItems)
+        {
+            customerReationSprite.sprite = happySprite;
+
+            if (reactionText != null)
+                reactionText.text = "Amazing! That's my FAVORITE!";
+
+            return;
+        }
+
+        // Liked
+        if (System.Array.Exists(likedMenuItems, item => item == targetMenuItem))
+        {
+            customerReationSprite.sprite = neutralSprite;
+
+            if (reactionText != null)
+                reactionText.text = "Yum! I like this one!";
+
+            return;
+        }
+
+        // Disliked
+        if (System.Array.Exists(dislikedMenuItems, item => item == targetMenuItem))
+        {
+            customerReationSprite.sprite = angrySprite;
+
+            if (reactionText != null)
+                reactionText.text = "Ugh... I don’t like this...";
+
+            return;
+        }
+
+        Debug.Log("Unknown food");
         if (reactionText != null)
             reactionText.text = "I don't know what this is...";
     }

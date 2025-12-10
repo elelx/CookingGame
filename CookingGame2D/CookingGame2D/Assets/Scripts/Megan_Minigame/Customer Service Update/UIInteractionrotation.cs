@@ -11,7 +11,9 @@ public class UIInteractionrotation : MonoBehaviour
 
     void Start()
     {
-        SetUI(false);
+        SetUI(true);
+        testGme.c2 = true;
+        testGme.p5 = true;
     }
 
     void Update()

@@ -26,7 +26,6 @@ public class GameRotation : MonoBehaviour
     public bool p5;
     public bool p6;
 
-
     void Update()
     {
         MoveCamera1();
@@ -50,8 +49,22 @@ public class GameRotation : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(MoveCam(camPos1, mainCam1));
-        StartCoroutine(MoveCam(camPos4, mainCam2));
+        StartCoroutine(MoveCam(camPos2, mainCam1));
+        StartCoroutine(MoveCam(camPos5, mainCam2));
+    }
+
+    void CheckAnger()
+    {
+        BasicCustomerManager customerManager = Object.FindFirstObjectByType<BasicCustomerManager>(); //Grab Active Customer Profile Script
+
+        if (c2 == false)
+        {
+            customerManager.rightScene = false;
+        }
+        else if (c2 == true)
+        {
+            customerManager.timerIsOn = true;
+        }
     }
 
     //We should probably fix this later, maybe put the cams on a numbered list
@@ -162,6 +175,8 @@ public class GameRotation : MonoBehaviour
 
     IEnumerator MoveCam(Transform targetCamNum, GameObject cameraNum)
     {
+        CheckAnger();
+
         Vector3 startPos = new Vector3(cameraNum.transform.position.x, cameraNum.transform.position.y, cameraNum.transform.position.z);
         Vector3 endPos = new Vector3(targetCamNum.position.x, targetCamNum.position.y, startPos.z);
 
