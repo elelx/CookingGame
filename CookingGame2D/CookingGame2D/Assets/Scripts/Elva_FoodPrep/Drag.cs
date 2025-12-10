@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class Drag : MonoBehaviour
 {
-    public DragMan manager;   
-    public float dragThreshold = 100f;  
+    public DragMan manager;
+    public PressKeys mashGate;
+    public float dragThreshold = 100f;
+    public CutingBoardAnim boardGate;
 
     Vector3 startPos;
 
@@ -18,6 +20,12 @@ public class Drag : MonoBehaviour
     {
         if (done) return;
 
+        if (mashGate == null || !mashGate.canCut)
+            return;
+
+        if (boardGate != null && !boardGate.IsBoardReady())
+            return;
+
         Vector3 m = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         m.z = 0;
         transform.position = m;
@@ -27,14 +35,10 @@ public class Drag : MonoBehaviour
         if (dist > dragThreshold)
         {
             done = true;
-
             manager.PieceRemoved(this);
-
-
-            gameObject.SetActive(false); 
+            gameObject.SetActive(false);
         }
     }
-
     public void ResetDrag()
     {
         done = false;

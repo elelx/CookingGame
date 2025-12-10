@@ -2936,6 +2936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: bf4deaf6cba4c4d149654ad3e9683b55, type: 3}
@@ -3223,7 +3224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
+  mashGate: {fileID: 1282856302}
   dragThreshold: 4
+  boardGate: {fileID: 0}
 --- !u!61 &128498755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3511,7 +3514,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
+  mashGate: {fileID: 1282856302}
   dragThreshold: 4
+  boardGate: {fileID: 0}
 --- !u!61 &130394924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7841,6 +7846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -9855,6 +9861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 784d6532a245e4c2fb7d4e14301ebb5e, type: 3}
@@ -12125,6 +12132,8 @@ GameObject:
   m_Component:
   - component: {fileID: 486758269}
   - component: {fileID: 486758270}
+  - component: {fileID: 486758271}
+  - component: {fileID: 486758272}
   m_Layer: 6
   m_Name: cuttingboard
   m_TagString: Untagged
@@ -12205,6 +12214,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &486758271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486758268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2507286f3d8b5af4595347f4ce29e1d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CutingBoardAnim
+  anim: {fileID: 486758272}
+  mashGate: {fileID: 1282856302}
+--- !u!95 &486758272
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486758268}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4d42c807daff7a41b7e73e900aceee1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &500368598
 GameObject:
   m_ObjectHideFlags: 0
@@ -13186,6 +13231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 0}
   finishClips: []
   mashGate: {fileID: 1282856302}
@@ -14452,6 +14498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 0}
   finishClips: []
   mashGate: {fileID: 1282856302}
@@ -15629,6 +15676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -19680,6 +19728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 784d6532a245e4c2fb7d4e14301ebb5e, type: 3}
@@ -20495,7 +20544,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 2093573696}
+  mashGate: {fileID: 1282856302}
   dragThreshold: 2
+  boardGate: {fileID: 0}
 --- !u!61 &895866342
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20996,6 +21047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -21176,6 +21228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -22036,7 +22089,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
+  mashGate: {fileID: 1282856302}
   dragThreshold: 4
+  boardGate: {fileID: 0}
 --- !u!61 &942482568
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22447,6 +22502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 784d6532a245e4c2fb7d4e14301ebb5e, type: 3}
@@ -25022,6 +25078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 784d6532a245e4c2fb7d4e14301ebb5e, type: 3}
@@ -25156,7 +25213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
+  mashGate: {fileID: 1282856302}
   dragThreshold: 4
+  boardGate: {fileID: 0}
 --- !u!61 &1057737486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25971,6 +26030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -27328,6 +27388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -28388,6 +28449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -28921,6 +28983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -29056,7 +29119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
+  mashGate: {fileID: 1282856302}
   dragThreshold: 4
+  boardGate: {fileID: 0}
 --- !u!61 &1324995225
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31230,6 +31295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 0}
   finishClips: []
   mashGate: {fileID: 1282856302}
@@ -31770,6 +31836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -32040,6 +32107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 784d6532a245e4c2fb7d4e14301ebb5e, type: 3}
@@ -36353,6 +36421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -38329,6 +38398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: bf4deaf6cba4c4d149654ad3e9683b55, type: 3}
@@ -38946,7 +39016,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 1487845419}
+  mashGate: {fileID: 1282856302}
   dragThreshold: 4
+  boardGate: {fileID: 0}
 --- !u!61 &1828359216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39942,7 +40014,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 300061959}
+  mashGate: {fileID: 1282856302}
   dragThreshold: 3
+  boardGate: {fileID: 0}
 --- !u!61 &1872054048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40184,7 +40258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 2093573696}
+  mashGate: {fileID: 1282856302}
   dragThreshold: 2
+  boardGate: {fileID: 0}
 --- !u!61 &1875061646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42305,6 +42381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -43621,6 +43698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -44796,6 +44874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -45134,6 +45213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c3dfc755dc849f8b3921de84da6697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingAnim
+  boardGate: {fileID: 0}
   sfx: {fileID: 792579552}
   finishClips:
   - {fileID: 8300000, guid: 6bfdd04a9f31544e69290d4a1c51ddf5, type: 3}
@@ -45268,7 +45348,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
   manager: {fileID: 2093573696}
+  mashGate: {fileID: 1282856302}
   dragThreshold: 2
+  boardGate: {fileID: 0}
 --- !u!61 &2105280007
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46150,6 +46232,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8724883804166104849, guid: 5a1fdaba8d4b6924fa49a8257c206e3a, type: 3}
+      propertyPath: mashGate
+      value: 
+      objectReference: {fileID: 1282856302}
     - target: {fileID: 9016647795316199106, guid: 5a1fdaba8d4b6924fa49a8257c206e3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

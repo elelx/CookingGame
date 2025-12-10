@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class CuttingAnim : MonoBehaviour
 {
+    public CutingBoardAnim boardGate;
 
     public AudioSource sfx;
     public AudioClip[] finishClips;
@@ -51,6 +52,8 @@ public class CuttingAnim : MonoBehaviour
 
         bool gateOK = mashGate.canCut;
         bool knifeMoving = knife.isMoving;
+        bool boardOK = boardGate == null || boardGate.IsBoardReady();
+
 
         if (gateOK && knifeMoving)
         {
@@ -61,8 +64,10 @@ public class CuttingAnim : MonoBehaviour
             knife.StopCutSound();
         }
 
-        if (!gateOK || !knifeMoving)
+        if (!gateOK || !knifeMoving || !boardOK)
         {
+            knife.StopCutSound();
+
             if (currentAnim)
             {
                 currentAnim.SetBool("IsCutting", false);
