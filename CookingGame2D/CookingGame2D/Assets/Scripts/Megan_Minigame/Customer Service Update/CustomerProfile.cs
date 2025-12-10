@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class CustomerProfile : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class CustomerProfile : MonoBehaviour
     public Sprite happySprite;
     public Sprite neutralSprite;
     public Sprite angrySprite;
+    public TMP_Text reactionText;
 
     [Header("Interaction Managment")]
     public string targetMenuItem; 
@@ -44,32 +46,44 @@ public class CustomerProfile : MonoBehaviour
             Debug.Log("Favorite Food!");
             customerReationSprite.sprite = happySprite;
             ScoreManager.Instance.AddPoints(5);
-            // trigger heart animation here
+
+            if (reactionText != null)
+                reactionText.text = "Amazing! That's my FAVORITE!";
+
             return;
         }
 
-        // Liked (using array check)
+        // Liked
         if (System.Array.Exists(likedMenuItems, item => item == targetMenuItem))
         {
             Debug.Log("Liked Food!");
             customerReationSprite.sprite = neutralSprite;
             ScoreManager.Instance.AddPoints(3);
-            // thumbs up animation
+
+            if (reactionText != null)
+                reactionText.text = "Yum! I like this one!";
+
             return;
         }
 
-        // Disliked (using array check)
+        // Disliked
         if (System.Array.Exists(dislikedMenuItems, item => item == targetMenuItem))
         {
             Debug.Log("Disliked Food!");
             customerReationSprite.sprite = angrySprite;
             ScoreManager.Instance.AddPoints(0);
-            // angry animation
+
+            if (reactionText != null)
+                reactionText.text = "Ugh... I don’t like this...";
+
             return;
         }
 
         Debug.Log("Unknown food (0 points)");
+        if (reactionText != null)
+            reactionText.text = "I don't know what this is...";
     }
+
 
 
     public void ReceiveSoup(string soupName)
