@@ -2866,7 +2866,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 12
+  m_SortingOrder: 13
   m_Sprite: {fileID: 7222005228262322221, guid: a2528d295cccd45d78a20411fa53c898, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3226,7 +3226,7 @@ MonoBehaviour:
   manager: {fileID: 1487845419}
   mashGate: {fileID: 1282856302}
   dragThreshold: 4
-  boardGate: {fileID: 0}
+  boardGate: {fileID: 486758271}
 --- !u!61 &128498755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3516,7 +3516,7 @@ MonoBehaviour:
   manager: {fileID: 1487845419}
   mashGate: {fileID: 1282856302}
   dragThreshold: 4
-  boardGate: {fileID: 0}
+  boardGate: {fileID: 486758271}
 --- !u!61 &130394924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9791,7 +9791,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 10
   m_Sprite: {fileID: -6188977213115847136, guid: c8ac1871ec02147c5b302be670aee7dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10793,7 +10793,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 12
   m_Sprite: {fileID: -966319425182389632, guid: cbce2f2e133bf4b84a1fb02f16f6c1b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13139,7 +13139,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 10
   m_Sprite: {fileID: -9081334657755425246, guid: 13e709569f98544b6b6bbd177fbea48e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -19060,7 +19060,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2114686101538272709, guid: 8c769631f843f413f9252239329e81bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20546,7 +20546,7 @@ MonoBehaviour:
   manager: {fileID: 2093573696}
   mashGate: {fileID: 1282856302}
   dragThreshold: 2
-  boardGate: {fileID: 0}
+  boardGate: {fileID: 486758271}
 --- !u!61 &895866342
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22091,7 +22091,7 @@ MonoBehaviour:
   manager: {fileID: 1487845419}
   mashGate: {fileID: 1282856302}
   dragThreshold: 4
-  boardGate: {fileID: 0}
+  boardGate: {fileID: 486758271}
 --- !u!61 &942482568
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22432,7 +22432,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 9
   m_Sprite: {fileID: -1456212402494721597, guid: 875f501daac5640a3b0d9ac2ff769b41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -23796,7 +23796,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 8
   m_Sprite: {fileID: -2959983959240947154, guid: 5062d9eb85491408a8f765f4adbed566, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24915,7 +24915,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 8
   m_Sprite: {fileID: -6746243822339681518, guid: cc507c0e565534a3bbab7187c7a501b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -25215,7 +25215,7 @@ MonoBehaviour:
   manager: {fileID: 1487845419}
   mashGate: {fileID: 1282856302}
   dragThreshold: 4
-  boardGate: {fileID: 0}
+  boardGate: {fileID: 486758271}
 --- !u!61 &1057737486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25867,7 +25867,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 7
   m_Sprite: {fileID: 1754345137734389088, guid: 2440ed14a93b44ba2a525fa43d0388ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -28379,7 +28379,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 12
   m_Sprite: {fileID: 8143951636752000675, guid: 334e8c6a4ebef4befab9555ba52c1a4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -29121,7 +29121,7 @@ MonoBehaviour:
   manager: {fileID: 1487845419}
   mashGate: {fileID: 1282856302}
   dragThreshold: 4
-  boardGate: {fileID: 0}
+  boardGate: {fileID: 486758271}
 --- !u!61 &1324995225
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31249,7 +31249,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 10
   m_Sprite: {fileID: -8268322514158927915, guid: 15ab820221caf4d23a628e4feb2ca6ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -31766,7 +31766,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 12
   m_Sprite: {fileID: 7221837029631321362, guid: e38aa2421a3b347f997cf6cbfd6d01eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -32037,7 +32037,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 8
   m_Sprite: {fileID: 472292166394648563, guid: 6a7d302b39a6741c38610e3c40c3efb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -39018,7 +39018,7 @@ MonoBehaviour:
   manager: {fileID: 1487845419}
   mashGate: {fileID: 1282856302}
   dragThreshold: 4
-  boardGate: {fileID: 0}
+  boardGate: {fileID: 486758271}
 --- !u!61 &1828359216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39927,7 +39927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1872054045
 Transform:
   m_ObjectHideFlags: 0
@@ -40016,7 +40016,7 @@ MonoBehaviour:
   manager: {fileID: 300061959}
   mashGate: {fileID: 1282856302}
   dragThreshold: 3
-  boardGate: {fileID: 0}
+  boardGate: {fileID: 486758271}
 --- !u!61 &1872054048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40260,7 +40260,7 @@ MonoBehaviour:
   manager: {fileID: 2093573696}
   mashGate: {fileID: 1282856302}
   dragThreshold: 2
-  boardGate: {fileID: 0}
+  boardGate: {fileID: 486758271}
 --- !u!61 &1875061646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44650,7 +44650,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 8
   m_Sprite: {fileID: -4684414703577077604, guid: 8420d4199e3a94f64aabed01ccb8dcba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -44804,7 +44804,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 9
   m_Sprite: {fileID: -6888898294195568640, guid: ae33f12ef7e114f63b8509848be10975, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -45350,7 +45350,7 @@ MonoBehaviour:
   manager: {fileID: 2093573696}
   mashGate: {fileID: 1282856302}
   dragThreshold: 2
-  boardGate: {fileID: 0}
+  boardGate: {fileID: 486758271}
 --- !u!61 &2105280007
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45556,7 +45556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2112206069
 Transform:
   m_ObjectHideFlags: 0
@@ -46236,6 +46236,10 @@ PrefabInstance:
       propertyPath: mashGate
       value: 
       objectReference: {fileID: 1282856302}
+    - target: {fileID: 8724883804166104849, guid: 5a1fdaba8d4b6924fa49a8257c206e3a, type: 3}
+      propertyPath: boardGate
+      value: 
+      objectReference: {fileID: 486758271}
     - target: {fileID: 9016647795316199106, guid: 5a1fdaba8d4b6924fa49a8257c206e3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
