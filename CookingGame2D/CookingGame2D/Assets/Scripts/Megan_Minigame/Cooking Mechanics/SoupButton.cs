@@ -6,13 +6,15 @@ public class SoupButton : MonoBehaviour
     public Transform customerFolder;
     public SoupManager soupManager;
     public CustomerInteractionManager interactionManager;
+    public bool customerIsSwitching = false;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (CustomerInteractionManager.playerIsTyping == false)
+            if (CustomerInteractionManager.playerIsTyping == false && customerIsSwitching == false)
             {
+                customerIsSwitching = true;
                 ServeSoup();
             }
         }
@@ -26,6 +28,7 @@ public class SoupButton : MonoBehaviour
 
     private IEnumerator SwitchCustomerAfterDelay()
     {
+
         CustomerRotationManager rotation = FindAnyObjectByType<CustomerRotationManager>();
         GameObject currentCustomer = rotation.GetCurrentCustomer();
 
@@ -37,20 +40,22 @@ public class SoupButton : MonoBehaviour
         // Score soup
         if (profile != null && soupManager.HasFinishedSoup())
         {
+            Debug.Log("Log Score");
             profile.ReceiveSoup(soupManager.currentSoupName);
             profile.ResetForNextCustomer();
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
 
         interactionManager?.EndInteraction();
-
 
         // Move to next customer
         rotation.MoveToNextCustomer();
 
         soupManager.ServeSoup();
         interactionManager?.StartInteraction();
+
+        customerIsSwitching = false;
     }
 
 }
