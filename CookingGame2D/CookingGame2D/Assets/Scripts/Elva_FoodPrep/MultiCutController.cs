@@ -4,45 +4,44 @@ public class MultiCutController : MonoBehaviour
 {
     public string ingredientName = "fish";
 
-    public CuttingAnim[] pieces;   
-    public int totalPieces;        
-    public int piecesFinished;     
+    public CuttingAnim[] pieces;
+    public Drag[] dragPieces;
 
-    public GameObject doneButton;  
-    public PressKeys mashGate;     
+    public int totalPieces;
+    public int piecesFinished;
+
+    public GameObject doneButton;
+    public PressKeys mashGate;
 
     void Start()
     {
-        totalPieces = pieces.Length;
         piecesFinished = 0;
 
+        totalPieces = pieces.Length + dragPieces.Length;
+
         if (doneButton)
-        {
             doneButton.SetActive(false);
-        }
-            
+
         foreach (var p in pieces)
-        {
             p.SetParentController(this, mashGate);
-        }
-            
+
+        foreach (var d in dragPieces)
+            d.manager = this;
+
     }
 
     public void NotifyPieceFinished()
     {
-        piecesFinished += 1;
+        piecesFinished++;
 
-        Debug.Log(" finished! Count: " + piecesFinished + "out of " + totalPieces);
+        Debug.Log("Finished piece! Count: " + piecesFinished + " / " + totalPieces);
 
         if (piecesFinished >= totalPieces)
         {
-            Debug.Log("ALL  DONE!");
+            Debug.Log("ALL DONE!");
 
             if (doneButton)
-            {
                 doneButton.SetActive(true);
-            }
-
         }
     }
 
@@ -52,7 +51,6 @@ public class MultiCutController : MonoBehaviour
         ResetIngredient();
     }
 
-
     public void ResetIngredient()
     {
         Debug.Log("Resetting ingredient...");
@@ -60,9 +58,10 @@ public class MultiCutController : MonoBehaviour
         piecesFinished = 0;
 
         foreach (var p in pieces)
-        {
             p.ResetCutPiece();
-        }
+
+        foreach (var d in dragPieces)
+            d.ResetDrag();    
 
         if (doneButton)
             doneButton.SetActive(false);

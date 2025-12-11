@@ -92,6 +92,22 @@ public class Inventory : MonoBehaviour
     }
 
 
+    public bool AllIngredientsZero()
+    {
+        return shrimp == 0 &&
+               snail == 0 &&
+               tbone == 0 &&
+               mushroom == 0 &&
+               sausge == 0 &&
+               fish == 0 &&
+               carrot == 0 &&
+               onion == 0 &&
+               garlic == 0 &&
+               bug == 0 &&
+               kelp == 0;
+    }
+
+
 }
 
 

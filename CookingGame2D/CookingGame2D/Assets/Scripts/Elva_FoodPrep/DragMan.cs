@@ -1,120 +1,149 @@
-using UnityEngine;
+//using UnityEngine;
 
-public class DragMan : MonoBehaviour
-{
-    public Drag[] pieces;
-    public CuttingAnim[] cutPieces;
+//public class DragMan : MonoBehaviour
+//{
+//    public Drag[] pieces;
 
-    int removedCount = 0;
+//    public CuttingAnim[] cutPieces;
 
-    public enum PrepType { Shrimp, Snail, Mushroom, Garlic }
-    public PrepType prepType;
+//    int removedCount = 0;
 
-    public GameObject snailBody;
-    public GameObject snailshell;
+//    public enum PrepType { Shrimp } //Snail, Garlic,Mushroom
+//    public PrepType prepType;
 
-    public GameObject newMushroomPrefab;
-    public GameObject garlic;
-    public GameObject ingarlic;
+//    //public GameObject snailBody;
+//    //public GameObject snailshell;
 
-    public GameObject doneButton;
+//    //public GameObject newMushroomPrefab;
+//    //public GameObject garlic;
+//    //public GameObject ingarlic;
 
-    GameObject spawnedMushroom;
-    public PressKeys cutScript; 
+//    public GameObject doneButton;
 
-    void Start()
-    {
-        foreach (var p in pieces)
-            p.manager = this;
+//    //GameObject spawnedMushroom;
+//    public PressKeys cutScript; 
 
-        snailBody.SetActive(false);
-        //    ResetAll();
+//    void Start()
+//    {
+//        foreach (var p in pieces)
+//            p.manager = this;
 
-
-    }
-
-    public void PieceRemoved(Drag p)
-    {
-        removedCount +=1;
-
-        if (removedCount >= pieces.Length)
-        {
-            OnCompleted();
-        }
-    }
-
-    void OnCompleted()
-    {
-        Debug.Log("OnCompleted() entered!");
+//        //snailBody.SetActive(false);
+//        ////    ResetAll();
 
 
-        switch (prepType)
-        {
-            case PrepType.Shrimp:
-                ShowDoneButton();
+//    }
 
-                break;
+//    public void PieceRemoved(Drag p)
+//    {
+//        removedCount +=1;
 
-            case PrepType.Snail:
+//        if (removedCount >= pieces.Length)
+//        {
+//            OnCompleted();
+//        }
+//    }
 
-                snailshell.SetActive(false);
-                snailBody.SetActive(true);
+//    void OnCompleted()
+//    {
+//        Debug.Log("OnCompleted() entered!");
 
-                cutScript.enabled = true;
 
-                break;
+//        switch (prepType)
+//        {
+//            case PrepType.Shrimp:
+//                ShowDoneButton();
 
-            case PrepType.Mushroom:
+//                break;
 
-                spawnedMushroom = Instantiate(
-                newMushroomPrefab,
-                pieces[0].transform.position,
-                Quaternion.identity
-            );
-                ShowDoneButton();
+//            //case PrepType.Snail:
 
-                break;
+//            //    snailshell.SetActive(false);
 
-            case PrepType.Garlic:
 
-                garlic.SetActive(true);
-                ingarlic.SetActive(false);
+//            //    snailBody.SetActive(true);
 
-                cutScript.enabled = true;
-                break;
-        }
+//            //    cutScript.enabled = true;
 
-        Debug.Log($"{prepType} completed!");
-    }
-    public void ShowDoneButton()
-    {
-        if (doneButton)
-            doneButton.SetActive(true);
-    }
-    public void ResetAll()
-    {
-        Debug.Log("RESET ALL");
+//            //    break;
 
-        removedCount = 0;
-        foreach (var p in pieces)
-            p.ResetDrag();
+//            //case PrepType.Mushroom:
 
-        foreach (var c in cutPieces)
-            c.ResetCutPiece();
+//            //    spawnedMushroom = Instantiate(
+//            //    newMushroomPrefab,
+//            //    pieces[0].transform.position,
+//            //    Quaternion.identity
+//            //);
+//            //    ShowDoneButton();
 
-        if (cutScript)
-            cutScript.enabled = false;
+//            //    break;
 
-        if (snailBody) snailBody.SetActive(false);
-        if (snailshell) snailshell.SetActive(true);
+//            //case PrepType.Garlic:
+
+//            //    garlic.SetActive(true);
+//            //    ingarlic.SetActive(false);
+
+//            //    cutScript.enabled = true;
+//            //    break;
+//        }
+
+//        Debug.Log($"{prepType} completed!");
+//    }
+
+
+//    public void ShowDoneButton()
+//    {
+//        if (doneButton)
+//            doneButton.SetActive(true);
+//    }
+
+
+//    public void ResetAll()
+//    {
+//        Debug.Log("RESET ALL");
+
+//        removedCount = 0;
+//        foreach (var p in pieces)
+//            p.ResetDrag();
+
+//        foreach (var c in cutPieces)
+//            c.ResetCutPiece();
+
+//        if (cutScript)
+//            cutScript.enabled = false;
+
+//        //if (snailBody) snailBody.SetActive(false);
+//        //if (snailshell) snailshell.SetActive(true);
      
-        if (garlic) garlic.SetActive(false);
+//        //if (garlic) garlic.SetActive(false);
 
-        if (spawnedMushroom)
-            Destroy(spawnedMushroom);
+//        //if (spawnedMushroom)
+//        //    Destroy(spawnedMushroom);
 
-        if (doneButton)
-            doneButton.SetActive(false);
-    }
+//        if (doneButton)
+//            doneButton.SetActive(false);
+//    }
 
-}
+//    public void ResetDragOnly()
+//    {
+//        Debug.Log("RESET DRAG ONLY");
+
+//        removedCount = 0;
+
+//        foreach (var p in pieces)
+//            p.ResetDrag();
+
+//        //if (prepType == PrepType.Garlic)
+//        //{
+//        //    garlic.SetActive(false);
+//        //    ingarlic.SetActive(true);
+//        //}
+
+//        //if (spawnedMushroom)
+//        //    Destroy(spawnedMushroom);
+
+//        if (doneButton)
+//            doneButton.SetActive(false);
+//    }
+
+//}

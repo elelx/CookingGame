@@ -16,6 +16,10 @@ public class PressKeys : MonoBehaviour
     //public bool AllCondMet;
 
 
+
+
+
+
     public float pressLifetime = 0.45f;
 
     public KeyCode[] keys = { KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.J, KeyCode.K, KeyCode.L };//, KeyCode.J, KeyCode.K, KeyCode.L
@@ -32,6 +36,7 @@ public class PressKeys : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         canCut = false;
         ResetKeys();
     }
@@ -53,6 +58,9 @@ public class PressKeys : MonoBehaviour
 
     void HoldingPan()
     {
+        Debug.Log("u can press");
+
+
         float now = Time.time;
 
         if (Input.GetKeyDown(KeyCode.A))

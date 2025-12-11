@@ -3,7 +3,6 @@ using UnityEngine;
 public class AppearIngre : MonoBehaviour
 {
     public GameObject[] ingredients;
-    public DragMan[] dragManagers;
 
     public void ActivateIngredient(int index)
     {
@@ -13,10 +12,25 @@ public class AppearIngre : MonoBehaviour
 
             ingredients[i].SetActive(active);
 
-            if (!active && i < dragManagers.Length && dragManagers[i] != null)
+            if (!active)
             {
-                dragManagers[i].ResetAll();
+                var controller = ingredients[i].GetComponent<MultiCutController>();
+                if (controller)
+                    controller.ResetIngredient();
             }
         }
     }
+
+    public void ResetAllIngredients()
+    {
+        foreach (var ing in ingredients)
+        {
+            ing.SetActive(false);
+
+            var controller = ing.GetComponent<MultiCutController>();
+            if (controller)
+                controller.ResetIngredient();
+        }
+    }
+
 }

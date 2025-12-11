@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 public class FoodPrepRotation : MonoBehaviour
 {
+    public AppearIngre appearIngre;
+
 
     public GameRotation testGme;
     public bool isSceneOActive;
@@ -51,5 +53,8 @@ public class FoodPrepRotation : MonoBehaviour
         {
             b.SetActive(active);
         }
+
+        if (!active && appearIngre != null)
+            appearIngre.ResetAllIngredients();
     }
 }
