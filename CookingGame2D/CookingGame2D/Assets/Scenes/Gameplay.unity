@@ -1393,7 +1393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb84acfee787694c9c66159be39fca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
-  soupName: Green Lagoon Soup
+  soupName: Green Lagoon Stew
   requiredIngredients:
   - Blue Jelly Stock
   - kelp
@@ -3600,6 +3600,7 @@ MonoBehaviour:
   - {fileID: 730823696}
   - {fileID: 730823696}
   - {fileID: 1416532475}
+  - {fileID: 1511221442}
 --- !u!1 &138485473
 GameObject:
   m_ObjectHideFlags: 0
@@ -8555,6 +8556,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ServeSoup
       objectReference: {fileID: 0}
+    - target: {fileID: 7659340201461135012, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9982,7 +9987,7 @@ MonoBehaviour:
   - {fileID: 977867049}
   - {fileID: 1825121655}
   - {fileID: 74462951}
-  - {fileID: 420463447}
+  - {fileID: 0}
   - {fileID: 204165030}
   potRenderer: {fileID: 1882652551}
   potIdleSprite: {fileID: 3112589160528298819, guid: 51b63bcc66a7249be96bf711d334d8ed, type: 3}
@@ -10022,7 +10027,7 @@ MonoBehaviour:
   - {fileID: 64391352}
   - {fileID: 1545987043}
   - {fileID: 1256160537}
-  sfx: {fileID: 0}
+  sfx: {fileID: 792579552}
   emptyClip: {fileID: 8300000, guid: a6ead75ce5d55414d92024b949ae8c06, type: 3}
   addIngredientClip: {fileID: 8300000, guid: b3053136b4f9a40059998352a6d13d1f, type: 3}
 --- !u!1 &411009258
@@ -10427,59 +10432,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419320861}
   m_CullTransparentMesh: 1
---- !u!1 &420463445
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 420463446}
-  - component: {fileID: 420463447}
-  m_Layer: 6
-  m_Name: Deep Sea Stew
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &420463446
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420463445}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 474962548}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &420463447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420463445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adb84acfee787694c9c66159be39fca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Recipe
-  soupName: Deep Sea Stew
-  requiredIngredients:
-  - Blue Jelly Stock
-  - shrimp
-  - snail
-  - kelp
-  soupPrefab: {fileID: 1035584735}
-  soupSprite: {fileID: -2778281876870342817, guid: 5bab1c43865594a53a87b34f7052a326, type: 3}
-  isTrash: 0
 --- !u!1 &421048806
 GameObject:
   m_ObjectHideFlags: 0
@@ -11939,7 +11891,6 @@ Transform:
   - {fileID: 977867048}
   - {fileID: 1825121654}
   - {fileID: 74462950}
-  - {fileID: 420463446}
   - {fileID: 204165029}
   m_Father: {fileID: 408622800}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27218,11 +27169,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 730823697}
   - {fileID: 1035584736}
   - {fileID: 832026947}
-  - {fileID: 730823697}
-  - {fileID: 2055362992}
   - {fileID: 1530528043}
+  - {fileID: 2055362992}
   m_Father: {fileID: 134902182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1206768756
@@ -34856,7 +34807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1577630326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37892,7 +37843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1721651223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41404,7 +41355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1941779298
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46290,7 +46241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7440786633784496046, guid: 0cd305c2a5058314794a1189061d0dbd, type: 3}
       propertyPath: favoriteMenuItems
-      value: Green Lagoon Stew
+      value: Kelp Soup
       objectReference: {fileID: 0}
     - target: {fileID: 7440786633784496046, guid: 0cd305c2a5058314794a1189061d0dbd, type: 3}
       propertyPath: characterProfilePage
@@ -46330,7 +46281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7440786633784496046, guid: 0cd305c2a5058314794a1189061d0dbd, type: 3}
       propertyPath: 'dislikedMenuItems.Array.data[0]'
-      value: Kelp Soup
+      value: Green Lagoon Stew
       objectReference: {fileID: 0}
     - target: {fileID: 7440786633784496046, guid: 0cd305c2a5058314794a1189061d0dbd, type: 3}
       propertyPath: 'dislikedMenuItems.Array.data[1]'

@@ -37,7 +37,6 @@ public class SoupManager : MonoBehaviour
   
 
 
-
     void Start()
     {
         potRenderer.sprite = potIdleSprite;

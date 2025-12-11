@@ -7,15 +7,15 @@ public class Inventory : MonoBehaviour
 
     private int shrimp = 0;
     private int snail = 0;
-    private int tbone = 0;
+    private int tbone = 1;
     private int mushroom = 0;
-    private int sausge = 0;
+    private int sausge = 1;
     private int fish = 0;
     private int carrot = 0;
-    private int onion = 1;
-    private int garlic = 0;
+    private int onion = 0;
+    private int garlic = 1;
     private int bug = 0;
-    private int kelp = 1;
+    private int kelp = 3;
 
 
     void Awake()

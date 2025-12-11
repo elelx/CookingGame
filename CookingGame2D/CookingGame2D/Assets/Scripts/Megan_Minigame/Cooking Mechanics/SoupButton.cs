@@ -28,11 +28,13 @@ public class SoupButton : MonoBehaviour
 
     private IEnumerator SwitchCustomerAfterDelay()
     {
+        customerIsSwitching = true;
 
         CustomerRotationManager rotation = FindAnyObjectByType<CustomerRotationManager>();
         GameObject currentCustomer = rotation.GetCurrentCustomer();
 
-        CustomerProfile profile = currentCustomer.GetComponent<CustomerProfile>();
+        //CustomerProfile profile = currentCustomer.GetComponent<CustomerProfile>();
+        CustomerProfile profile = FindFirstObjectByType<CustomerProfile>();
 
         // Pause emotion timer
         profile.PauseEmotionTimer();
@@ -45,14 +47,15 @@ public class SoupButton : MonoBehaviour
             profile.ResetForNextCustomer();
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         interactionManager?.EndInteraction();
+
+        soupManager.ServeSoup();
 
         // Move to next customer
         rotation.MoveToNextCustomer();
 
-        soupManager.ServeSoup();
         interactionManager?.StartInteraction();
 
         customerIsSwitching = false;

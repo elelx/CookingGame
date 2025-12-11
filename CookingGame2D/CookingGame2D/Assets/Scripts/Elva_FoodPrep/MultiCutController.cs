@@ -53,7 +53,6 @@ public class MultiCutController : MonoBehaviour
 
     public void ResetIngredient()
     {
-        Debug.Log("Resetting ingredient...");
 
         piecesFinished = 0;
 
