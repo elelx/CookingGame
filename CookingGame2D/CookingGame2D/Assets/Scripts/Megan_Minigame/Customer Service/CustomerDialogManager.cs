@@ -15,7 +15,7 @@ public class CustomerDialogueManager : MonoBehaviour
     [Header("Manual Book Data")]
     public ManualBookData manual;
 
-  
+
 
     [Header("Settings")]
     public float answerTimeLimit = 10f;
@@ -121,5 +121,5 @@ public class CustomerDialogueManager : MonoBehaviour
         };
     }
 
-    
+
 }

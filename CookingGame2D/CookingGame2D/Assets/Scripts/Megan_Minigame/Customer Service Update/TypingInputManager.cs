@@ -27,8 +27,6 @@ public class TypingInputManager : MonoBehaviour
     }
     public void SubmitText()
     {
-        //if (inputField == null || dialogueManager == null) return;
-
         string typed = inputField.text.ToLower().Trim();
         inputField.text = "";
 
@@ -39,7 +37,9 @@ public class TypingInputManager : MonoBehaviour
         }
 
         dialogueManager.CheckTypedAnswer(typed);
-        inputField.DeactivateInputField();
+
+        // Keep typing field active for next customer
+        inputField.ActivateInputField();
     }
 
     //ACTIVIVATE AND DECATIVATE INPUT FIELD

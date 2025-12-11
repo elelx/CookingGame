@@ -26,48 +26,31 @@ public class SoupButton : MonoBehaviour
 
     private IEnumerator SwitchCustomerAfterDelay()
     {
-        int currentIndex = -1;
+        CustomerRotationManager rotation = FindAnyObjectByType<CustomerRotationManager>();
+        GameObject currentCustomer = rotation.GetCurrentCustomer();
 
-        for (int i = 0; i < customerFolder.childCount; i++)
-        {
-            if (customerFolder.GetChild(i).gameObject.activeSelf)
-            {
-                currentIndex = i;
-                break;
-            }
-        }
+        CustomerProfile profile = currentCustomer.GetComponent<CustomerProfile>();
 
-        if (currentIndex == -1)
-        {
-            Debug.LogError("❌ No customer active!");
-            yield break;
-        }
-
-        GameObject currentCustomer = customerFolder.GetChild(currentIndex).gameObject;
-
-        CustomerProfile profile = Object.FindFirstObjectByType<CustomerProfile>(); //Grab Active Customer Profile Script
-
-        //Pause emotion timer
+        // Pause emotion timer
         profile.PauseEmotionTimer();
 
-        // Score the soup
+        // Score soup
         if (profile != null && soupManager.HasFinishedSoup())
         {
             profile.ReceiveSoup(soupManager.currentSoupName);
+            profile.ResetForNextCustomer();
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         interactionManager?.EndInteraction();
 
-        // Switch to next customer
-        int nextIndex = (currentIndex + 1) % customerFolder.childCount;
 
-        foreach (Transform c in customerFolder)
-            c.gameObject.SetActive(false);
-
-        customerFolder.GetChild(nextIndex).gameObject.SetActive(true);
+        // Move to next customer
+        rotation.MoveToNextCustomer();
 
         soupManager.ServeSoup();
+        interactionManager?.StartInteraction();
     }
+
 }

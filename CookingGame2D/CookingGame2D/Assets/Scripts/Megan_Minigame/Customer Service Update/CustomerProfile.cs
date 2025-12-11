@@ -23,7 +23,7 @@ public class CustomerProfile : MonoBehaviour
     public TMP_Text reactionText;
 
     [Header("Interaction Managment")]
-    public string targetMenuItem; 
+    public string targetMenuItem;
     private BasicCustomerManager customerManager;
 
     public void StartThisCharacterInteraction()
@@ -141,6 +141,12 @@ public class CustomerProfile : MonoBehaviour
     {
         targetMenuItem = soupName;
         ItemResponce();
+    }
+
+    public void ResetForNextCustomer()
+    {
+        customerReationSprite.sprite = neutralSprite;
+        if (reactionText != null) reactionText.text = "";
     }
 
 }

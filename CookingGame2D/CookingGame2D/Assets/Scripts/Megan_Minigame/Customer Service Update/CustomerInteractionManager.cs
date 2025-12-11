@@ -31,6 +31,11 @@ public class CustomerInteractionManager : MonoBehaviour
 
     private void Start()
     {
+        StartInteraction();
+    }
+
+    private void ResetInteraction()
+    {
         submitSoupText.SetActive(false);
         customerReactionImage.SetActive(false);
 
@@ -41,7 +46,6 @@ public class CustomerInteractionManager : MonoBehaviour
         //Reset Current Question Number
         currentQuestionNum = 0;
 
-        StartInteraction();
     }
 
     public void EndInteraction()
@@ -59,6 +63,8 @@ public class CustomerInteractionManager : MonoBehaviour
 
     public void StartInteraction()
     {
+         ResetInteraction();
+
         //NEED TO ADD !!!!!!! Make a random character appear
 
         //Start Customer Introduction
@@ -71,6 +77,8 @@ public class CustomerInteractionManager : MonoBehaviour
         //Assign name to UI
         customerNamePlate.SetActive(true);
         customerNameText.text = customerProfile.customerName;
+        ToggleInputFieldOn();
+
 
     }
 
@@ -109,15 +117,36 @@ public class CustomerInteractionManager : MonoBehaviour
     }
 
     //Prefrerence Quesions
+    //public void StartPrefrenceQuestions()
+    //{
+    //    customerReactionImage.SetActive(true);
+
+    //    Debug.Log("Questions Start");
+    //    TargetQuestionNums = GetThreeRandomNumbers(); //Gets 3 random numbers, no repeats
+    //    PrefrenceQuestions(TargetQuestionNums[0]);
+    //    PrefrenceQuestions(TargetQuestionNums[1]);
+    //    PrefrenceQuestions(TargetQuestionNums[2]);
+    //}
     public void StartPrefrenceQuestions()
     {
         customerReactionImage.SetActive(true);
-
         Debug.Log("Questions Start");
+
         TargetQuestionNums = GetThreeRandomNumbers(); //Gets 3 random numbers, no repeats
-        PrefrenceQuestions(TargetQuestionNums[0]);
-        PrefrenceQuestions(TargetQuestionNums[1]);
-        PrefrenceQuestions(TargetQuestionNums[2]);
+
+        for (int i = 0; i < MenuButtons.Length; i++)
+        {
+            Button btn = MenuButtons[i].GetComponent<Button>();
+            btn.interactable = false; // Reset interactable for all buttons
+        }
+
+        // Enable only the target buttons for this customer
+        for (int i = 0; i < TargetQuestionNums.Length; i++)
+        {
+            int index = TargetQuestionNums[i];
+            MenuButtons[index].SetActive(true);
+            MenuButtons[index].GetComponent<Button>().interactable = true;
+        }
     }
 
     void PrefrenceQuestions(int QuestionNum)
@@ -147,6 +176,8 @@ public class CustomerInteractionManager : MonoBehaviour
     {
         if (targetInputField == false)
         {
+            Debug.Log("test toggle input");
+
             targetInputField.SetActive(true);
             playerIsTyping = true;
         }
@@ -156,6 +187,15 @@ public class CustomerInteractionManager : MonoBehaviour
             playerIsTyping = false;
         }
     }
+
+    public void ToggleInputFieldOn()
+    {
+        Debug.Log("test toggle input");
+
+        targetInputField.SetActive(true);
+        playerIsTyping = true;
+    }
+
 
     //LOG RECIPES: UNSORTED FOR BUTTON PURPOSES
     public void LogRecipe1()

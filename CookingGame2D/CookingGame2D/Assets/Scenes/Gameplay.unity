@@ -8863,6 +8863,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4198470831451018612, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
       insertIndex: 4
       addedObject: {fileID: 1035584741}
+    - targetCorrespondingSourceObject: {fileID: 4198470831451018612, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1035584742}
   m_SourcePrefab: {fileID: 100100000, guid: d057e0df65aa3f744b153f6ad53dc546, type: 3}
 --- !u!1 &357055606
 GameObject:
@@ -24944,6 +24947,29 @@ MonoBehaviour:
   customerFolder: {fileID: 1497445502}
   soupManager: {fileID: 408622802}
   interactionManager: {fileID: 1087160715}
+--- !u!114 &1035584742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035584735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4502bb3e459873d4e83f46e4a3be4586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomerRotationManager
+  customers:
+  - {fileID: 38916802}
+  - {fileID: 712521752}
+  - {fileID: 1218691373}
+  - {fileID: 1805315291}
+  - {fileID: 1528110073}
+  - {fileID: 1450609128}
+  - {fileID: 2097926703}
+  - {fileID: 786684803}
+  - {fileID: 1889517097}
+  resultsSceneName: End Scene
 --- !u!1 &1043406534
 GameObject:
   m_ObjectHideFlags: 0
@@ -45377,7 +45403,7 @@ MonoBehaviour:
   prepType: 3
   snailBody: {fileID: 1872054044}
   snailshell: {fileID: 952121344}
-  newMushroomPrefab: {fileID: 2034900280426720488, guid: e3048bb286a2de04bb5f06f7b475830d, type: 3}
+  newMushroomPrefab: {fileID: 8178949527721100584, guid: 5a1fdaba8d4b6924fa49a8257c206e3a, type: 3}
   garlic: {fileID: 481438188}
   ingarlic: {fileID: 1647547095}
   doneButton: {fileID: 930175079}
